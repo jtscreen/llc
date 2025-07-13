@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joshua Screen - Actor • Musician • Photographer</title>
+  <meta name="description" content="Official website of Joshua Screen — Actor, Music Artist, Photographer, and Creative.">
+  
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Joshua Screen - Multi-Disciplinary Artist">
+  <meta property="og:description" content="Bringing stories to life through acting, music, and photography. Professional portfolio showcasing theatrical performances, musical compositions, and fine art photography.">
+  <meta property="og:image" content="../img/logo/coverPhoto.jpg">
+  <meta property="og:url" content="https://jtscreen.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <div class="nav-content">
+        <div class="nav-logo">
+          <a href="#" onclick="showPage('home')" class="logo-link">Joshua Screen</a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="nav-desktop">
+          <a href="#" onclick="showPage('home')" class="nav-link" data-page="home">Home</a>
+          <a href="#" onclick="showPage('acting')" class="nav-link" data-page="acting">Acting</a>
+          <a href="#" onclick="showPage('music')" class="nav-link" data-page="music">Music</a>
+          <a href="#" onclick="showPage('photography')" class="nav-link" data-page="photography">Photography</a>
+        </div>
+        
+        <!-- Mobile Navigation Button -->
+        <button class="nav-mobile-btn" onclick="toggleMobileMenu()">
+          <i data-lucide="menu" class="nav-icon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="nav-mobile" id="mobileNav">
+      <div class="nav-mobile-content">
+        <a href="#" onclick="showPage('home'); closeMobileMenu()" class="nav-mobile-link" data-page="home">Home</a>
+        <a href="#" onclick="showPage('acting'); closeMobileMenu()" class="nav-mobile-link" data-page="acting">Acting</a>
+        <a href="#" onclick="showPage('music'); closeMobileMenu()" class="nav-mobile-link" data-page="music">Music</a>
+        <a href="#" onclick="showPage('photography'); closeMobileMenu()" class="nav-mobile-link" data-page="photography">Photography</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Home Page -->
+    <div id="home" class="page active">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about">
+        <div class="container">
+          <div class="about-header">
+            <h2 class="section-title">Joshua Screen</h2>
+            <p class="about-description">
+                While bios are typically short and concise, I’ve always felt they can come across as impersonal or overly formal. Rather than aiming for the “perfect” bio, I prefer to speak to you directly—because, after all, that’s what this is all about: connection.
+            </p>
+            <br>
+            <p class="about-description">
+                I’m based in New York City, but I’m always open to travel for the right opportunity.
+                I thrive on challenge. For me, challenges are opportunities to grow, and I’m always eager to learn alongside passionate collaborators.
+            </p>
+            <br>
+            <p class="about-description">
+                Art is my passion—creating it, sharing it, and helping others bring their artistic visions to life. While I won’t list every skill in this bio (I’ve curated more detailed profiles on my subpages for specific fields), here’s a quick overview of the areas where I can help make your ideas a reality:
+            </p>
+          </div>
+          
+          <div class="disciplines">
+            <div class="discipline">
+              <div class="discipline-icon">
+                <i data-lucide="theater" class="icon"></i>
+              </div>
+              <h3 class="discipline-title">Acting</h3>
+              <p class="discipline-description">
+                Television and film, theatre, voice acting, video host
+              </p>
+            </div>
+            
+            <div class="discipline">
+              <div class="discipline-icon">
+                <i data-lucide="music" class="icon"></i>
+              </div>
+              <h3 class="discipline-title">Music</h3>
+              <p class="discipline-description">
+                Performer, songwriter, and music producer
+              </p>
+            </div>
+
+            <div class="discipline">
+              <div class="discipline-icon">
+                <i data-lucide="camera" class="icon"></i>
+              </div>
+              <h3 class="discipline-title">Photography</h3>
+              <p class="discipline-description">
+                Headshots, performance productions, portraits, events
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Work Preview -->
+      <section class="featured-work">
+        <div class="container">
+          <h2 class="section-title">Featured Work</h2>
+          
+          <div class="featured-loading" id="featuredLoading">
+            <div class="loading-grid">
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="featured-grid" id="featuredGrid">
+            <!-- Featured items will be loaded here -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Acting Page -->
+    <div id="acting" class="page">
+
+      <!-- Acting Bio -->
+      <section class="bio">
+        <div class="container">
+          <div class="bio-content">
+            <div class="bio-image">
+                <img id="bio-headshot-current" class="bio-headshot" src="img/home/headshot1.jpg" alt="Bio Headshot" />
+                <img id="bio-headshot-next" class="bio-headshot" src="img/home/headshot2.jpg" alt="Bio Headshot Next" style="opacity:0; position:absolute; left:0; top:0; width:100%; height:100%;" />
+            </div>
+            <div class="bio-text">
+              <h2 class="bio-title">Joshua Screen</h2>
+              <p class="bio-description">
+                With over 15 years of experience in theater, film, and television, I approach each role with meticulous 
+                preparation and deep character study. My method acting background allows me to inhabit characters fully, 
+                bringing authenticity and emotional truth to every performance.
+              </p>
+              <p class="bio-description">
+                I've had the privilege of working with renowned directors and fellow actors, appearing in critically 
+                acclaimed productions ranging from intimate black-box theater to major motion pictures. My versatility 
+                spans drama, comedy, and experimental theater.
+              </p>
+              <div class="skills">
+                <span class="skill">Theater</span>
+                <span class="skill">Film</span>
+                <span class="skill">Television</span>
+                <span class="skill">Voice Acting</span>
+                <span class="skill">Host</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Recent Work -->
+      <section class="recent-work">
+        <div class="container">
+            <h2 class="section-title">Recent Work</h2>
+                <div class="reel">
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/videoseries?si=jFQjfG0HIXfejEy2&amp;list=PLEtB1iosCuiwwJ75pH5wzKcZlNl6psrQH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+        <div class="download">
+            <h2 class="section-subtitle">Downloads</h2>
+            <div class="download-container">
+                <a class="download-headshot" href="img/docs/headshot.pdf" target="_blank"><img src="img/home/headshot1.JPG"></a>
+                <a class="download-resume" href="img/docs/resume.pdf" target="_blank"><img src="img/docs/resume.jpg"></a>
+            </div>
+        </div>
+      </section>
+
+      <!-- Acting Portfolio -->
+      <section class="portfolio">
+        <div class="container">
+          <h2 class="section-title">Portfolio</h2>
+          
+          <div class="portfolio-loading" id="actingLoading">
+            <div class="loading-grid">
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="portfolio-grid" id="actingGrid">
+            <!-- Acting items will be loaded here -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Music Page -->
+    <div id="music" class="page">
+      <!-- Music Hero -->
+      <section class="hero">
+        <div class="hero-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800')"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">Music</h1>
+          <p class="hero-subtitle">Composing melodies that touch the soul and bridge classical tradition with modern innovation</p>
+        </div>
+      </section>
+
+      <!-- Music Bio -->
+      <section class="bio">
+        <div class="container">
+          <div class="bio-content">
+            <div class="bio-text">
+              <h2 class="bio-title">Musical Journey</h2>
+              <p class="bio-description">
+                My musical journey began at age five with classical piano training, evolving through years of formal 
+                education and diverse performance experiences. I hold a Master's degree in Music Composition from 
+                Juilliard, where I developed my unique voice blending classical foundations with contemporary elements.
+              </p>
+              <p class="bio-description">
+                My compositions have been performed by symphony orchestras, chamber ensembles, and solo artists across 
+                the country. I specialize in creating emotionally resonant pieces that speak to both trained musicians 
+                and general audiences.
+              </p>
+              <div class="skills">
+                <span class="skill">Piano</span>
+                <span class="skill">Composition</span>
+                <span class="skill">Guitar</span>
+                <span class="skill">Vocals</span>
+                <span class="skill">Music Theory</span>
+              </div>
+            </div>
+            <div class="bio-image">
+              <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800" alt="Musician at piano in professional recording studio">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Music Portfolio -->
+      <section class="portfolio">
+        <div class="container">
+          <h2 class="section-title">Compositions</h2>
+          
+          <div class="portfolio-loading" id="musicLoading">
+            <div class="loading-grid">
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="portfolio-grid" id="musicGrid">
+            <!-- Music items will be loaded here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Recent Releases -->
+      <section class="recent-work">
+        <div class="container">
+          <h2 class="section-title">Recent Releases</h2>
+          
+          <div class="releases">
+            <div class="release">
+              <div class="release-icon">
+                <i data-lucide="play" class="icon"></i>
+              </div>
+              <div class="release-info">
+                <h3 class="release-title">Echoes of Tomorrow</h3>
+                <p class="release-genre">Contemporary Classical • 2024</p>
+              </div>
+              <div class="release-duration">4:32</div>
+            </div>
+            <div class="release">
+              <div class="release-icon">
+                <i data-lucide="play" class="icon"></i>
+              </div>
+              <div class="release-info">
+                <h3 class="release-title">Midnight Reverie</h3>
+                <p class="release-genre">Solo Piano • 2024</p>
+              </div>
+              <div class="release-duration">6:15</div>
+            </div>
+            <div class="release">
+              <div class="release-icon">
+                <i data-lucide="play" class="icon"></i>
+              </div>
+              <div class="release-info">
+                <h3 class="release-title">Urban Symphony</h3>
+                <p class="release-genre">Orchestra • 2023</p>
+              </div>
+              <div class="release-duration">12:08</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Photography Page -->
+    <div id="photography" class="page">
+      <!-- Photography Hero -->
+      <section class="hero">
+        <div class="hero-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://pixabay.com/get/gdec3469e47f409de210a4ea7bd68cc87ee8a1b9ff8a39df172d5409141fdeb3c076b6c89b42a0f36fc1cd61d459e5995b90204e169747d01859a917199baf52a_1280.jpg')"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">Photography</h1>
+          <p class="hero-subtitle">Capturing the poetry of light and shadow, emotion and moment</p>
+        </div>
+      </section>
+
+      <!-- Photography Bio -->
+      <section class="bio">
+        <div class="container">
+          <div class="bio-content">
+            <div class="bio-image">
+              <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800" alt="Professional photographer's workspace with cameras and equipment">
+            </div>
+            <div class="bio-text">
+              <h2 class="bio-title">Visual Storytelling</h2>
+              <p class="bio-description">
+                Photography, for me, is about more than capturing images—it's about preserving emotions, telling stories, 
+                and revealing the extraordinary within the ordinary. My work spans portrait photography, fine art, and 
+                lifestyle imagery, each project approached with artistic vision and technical precision.
+              </p>
+              <p class="bio-description">
+                I believe in the power of natural light and authentic moments. Whether working in my studio or on location, 
+                I strive to create images that resonate with viewers long after they've seen them. My style blends classical 
+                composition with contemporary sensibilities.
+              </p>
+              <div class="skills">
+                <span class="skill">Portrait</span>
+                <span class="skill">Fine Art</span>
+                <span class="skill">Lifestyle</span>
+                <span class="skill">Editorial</span>
+                <span class="skill">Digital & Film</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Photography Portfolio -->
+      <section class="portfolio">
+        <div class="container large">
+          <h2 class="section-title">Portfolio</h2>
+          
+          <div class="portfolio-loading" id="photographyLoading">
+            <div class="masonry-loading">
+              <div class="loading-item">
+                <div class="loading-image tall"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image tall"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image tall"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+              <div class="loading-item">
+                <div class="loading-image"></div>
+                <div class="loading-text"></div>
+                <div class="loading-text small"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="masonry-grid" id="photographyGrid">
+            <!-- Photography items will be loaded here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Photography Services -->
+      <section class="services">
+        <div class="container">
+          <h2 class="section-title">Services</h2>
+          
+          <div class="services-grid">
+            <div class="service">
+              <div class="service-icon">
+                <i data-lucide="user" class="icon"></i>
+              </div>
+              <h3 class="service-title">Portrait Photography</h3>
+              <p class="service-description">Professional headshots, family portraits, and personal branding sessions</p>
+            </div>
+            <div class="service">
+              <div class="service-icon">
+                <i data-lucide="heart" class="icon"></i>
+              </div>
+              <h3 class="service-title">Wedding Photography</h3>
+              <p class="service-description">Capturing your special day with artistic vision and emotional depth</p>
+            </div>
+            <div class="service">
+              <div class="service-icon">
+                <i data-lucide="palette" class="icon"></i>
+              </div>
+              <h3 class="service-title">Fine Art Prints</h3>
+              <p class="service-description">Limited edition prints and custom artwork for collectors and spaces</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-title">Joshua Screen</h3>
+          <p class="footer-description">
+            Bringing stories to life through the arts of acting, music, and photography. 
+            Available for collaborations and commissions.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link">
+              <i data-lucide="instagram" class="icon"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i data-lucide="linkedin" class="icon"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i data-lucide="twitter" class="icon"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4 class="footer-subtitle">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showPage('home')" class="footer-link">Home</a></li>
+            <li><a href="#" onclick="showPage('acting')" class="footer-link">Acting</a></li>
+            <li><a href="#" onclick="showPage('music')" class="footer-link">Music</a></li>
+            <li><a href="#" onclick="showPage('photography')" class="footer-link">Photography</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4 class="footer-subtitle">Contact</h4>
+          <div class="footer-contact">
+            <p>jtscreen23@gmail.com</p>
+            <p>New York, NY</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Joshua Screen. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal" style="display:none;">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" class="lightbox-img" src="" alt="">
+    <span class="lightbox-prev" onclick="prevLightbox()">&lt;</span>
+    <span class="lightbox-next" onclick="nextLightbox()">&gt;</span>
+  </div>
+  <script src="database.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
