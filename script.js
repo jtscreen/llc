@@ -267,13 +267,13 @@ function loadCategoryItems(category) {
         grid.appendChild(createPortfolioItem(item, false, idx));
       });
     } else if (category === 'photography') {
-        const headshotItems = portfolioData.photo.filter(item => item.category === 'headshot');
-        const productionItems = portfolioData.photo.find(item => item.category === 'production' && item.featured);
-        const gradItems = portfolioData.photo.find(item => item.category === 'grad' && item.featured);
-        const portraitItems = portfolioData.photo.find(item => item.category === 'portrait' && item.featured);   
-        const eventItems = portfolioData.photo.find(item => item.category === 'event' && item.featured);         
+        const headshotItems = portfolioData.photography.filter(item => item.category === 'headshot');
+        const productionItems = portfolioData.photography.find(item => item.category === 'production' && item.featured);
+        const gradItems = portfolioData.photography.find(item => item.category === 'graduation' && item.featured);
+        const portraitItems = portfolioData.photography.find(item => item.category === 'portrait' && item.featured);   
+        const eventItems = portfolioData.photography.find(item => item.category === 'event' && item.featured);         
 
-              // Build the array for the grid
+        // Build the array for the grid
         const items = [
             headshotItems[0],
             productionItems,
@@ -293,7 +293,7 @@ function loadCategoryItems(category) {
     }
     
     loading.style.display = 'none';
-    grid.style.display = category === 'photography' ? 'block' : 'grid';
+    grid.style.display = 'grid';
   }, 300);
 }
 
@@ -334,9 +334,22 @@ function createPortfolioItem(item, isMasonry = false, index = 0) {
       galleryItems = portfolioData.acting.filter(i => i.category === "film");
     } else if (index === 2) {
       galleryItems = portfolioData.acting.filter(i => i.category === "performance");
-    } else {
+    } else if (index === 3){
       galleryItems = portfolioData.acting.filter(i => i.category === "theater");
+    } else if (index === 4){
+      galleryItems = portfolioData.photography.filter(i => i.category === "headshot");
+    } else if (index === 5){
+      galleryItems = portfolioData.photography.filter(i => i.category === "production");
+    } else if (index === 6){
+      galleryItems = portfolioData.photography.filter(i => i.category === "graduation");
+    } else if (index === 7){
+      galleryItems = portfolioData.photography.filter(i => i.category === "portrait");
+    } else if (index === 8){
+      galleryItems = portfolioData.photography.filter(i => i.category === "event");
+    } else {
+      galleryItems = portfolioData[category] || [];
     }
+    
     let currentIndex = galleryItems.findIndex(i => i.imageUrl === item.imageUrl);
     if (currentIndex === -1) currentIndex = 0;
 
