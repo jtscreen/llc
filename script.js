@@ -165,29 +165,6 @@ window.addEventListener('DOMContentLoaded', () => {
   nextImg.classList.add('fade-out');
 });
 
-// Load portfolio data from API
-async function loadPortfolioData() {
-  try {
-    // Load all portfolio items
-    const response = await fetch('/api/portfolio');
-    const items = await response.json();
-    
-    // Organize by category
-    portfolioData.acting = items.filter(item => item.category === 'acting');
-    portfolioData.music = items.filter(item => item.category === 'music');
-    portfolioData.photography = items.filter(item => item.category === 'photography');
-    
-    // Load featured items
-    const featuredResponse = await fetch('/api/portfolio/featured');
-    portfolioData.featured = await featuredResponse.json();
-    
-  } catch (error) {
-    console.error('Error loading portfolio data:', error);
-    // Use fallback data if API fails
-    loadFallbackData();
-  }
-}
-
 // Load featured items for home page
 function loadFeaturedItems() {
   const featuredGrid = document.getElementById('featuredGrid');
@@ -326,159 +303,154 @@ function createPortfolioItem(item, isMasonry = false, index = 0) {
   </div>
 `;
 
-  // Add overlay click handler to the image
-  const img = div.querySelector('.portfolio-image');
-  img.addEventListener('click', function() {
-    let galleryItems;
-    if (index === 1) {
-      galleryItems = portfolioData.acting.filter(i => i.category === "film");
-    } else if (index === 2) {
-      galleryItems = portfolioData.acting.filter(i => i.category === "performance");
-    } else if (index === 3){
-      galleryItems = portfolioData.acting.filter(i => i.category === "theater");
-    } else if (index === 4){
-      galleryItems = portfolioData.photography.filter(i => i.category === "headshot");
-    } else if (index === 5){
-      galleryItems = portfolioData.photography.filter(i => i.category === "production");
-    } else if (index === 6){
-      galleryItems = portfolioData.photography.filter(i => i.category === "graduation");
-    } else if (index === 7){
-      galleryItems = portfolioData.photography.filter(i => i.category === "portrait");
-    } else if (index === 8){
-      galleryItems = portfolioData.photography.filter(i => i.category === "event");
-    } else {
-      galleryItems = portfolioData[category] || [];
-    }
-    
-    let currentIndex = galleryItems.findIndex(i => i.imageUrl === item.imageUrl);
-    if (currentIndex === -1) currentIndex = 0;
-
-    const overlay = document.createElement('div');
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100vw';
-    overlay.style.height = '100vh';
-    overlay.style.background = 'rgba(0,0,0,0.9)';
-    overlay.style.display = 'flex';
-    overlay.style.flexDirection = 'column';
-    overlay.style.alignItems = 'center';
-    overlay.style.justifyContent = 'center';
-    overlay.style.zIndex = '10000';
-
-    const imgEl = document.createElement('img');
-    imgEl.src = galleryItems[currentIndex].imageUrl;
-    imgEl.style.maxWidth = '90vw';
-    imgEl.style.maxHeight = '70vh';
-    imgEl.style.borderRadius = '0.5rem';
-    imgEl.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3)';
-    imgEl.style.marginBottom = '2rem';
-
-    const titleEl = document.createElement('h2');
-    titleEl.textContent = galleryItems[currentIndex].title;
-    titleEl.style.color = '#fff';
-    titleEl.style.margin = '0 0 0.5rem 0';
-    titleEl.style.textAlign = 'center';
-
-    const descEl = document.createElement('p');
-    descEl.textContent = galleryItems[currentIndex].description;
-    descEl.style.color = '#fff';
-    descEl.style.margin = '0 0 2rem 0';
-    descEl.style.textAlign = 'center';
-    descEl.style.maxWidth = '80vw';
-
-    const leftArrow = document.createElement('div');
-    leftArrow.textContent = '<';
-    leftArrow.style.position = 'absolute';
-    leftArrow.style.left = '2rem';
-    leftArrow.style.top = '50%';
-    leftArrow.style.transform = 'translateY(-50%)';
-    leftArrow.style.fontSize = '2.5rem';
-    leftArrow.style.color = '#fff';
-    leftArrow.style.cursor = 'pointer';
-    leftArrow.style.userSelect = 'none';
-    leftArrow.style.zIndex = '10001';
-
-    const rightArrow = document.createElement('div');
-    rightArrow.textContent = '>';
-    rightArrow.style.position = 'absolute';
-    rightArrow.style.right = '2rem';
-    rightArrow.style.top = '50%';
-    rightArrow.style.transform = 'translateY(-50%)';
-    rightArrow.style.fontSize = '2.5rem';
-    rightArrow.style.color = '#fff';
-    rightArrow.style.cursor = 'pointer';
-    rightArrow.style.userSelect = 'none';
-    rightArrow.style.zIndex = '10001';
-
-    leftArrow.addEventListener('click', function(e) {
-      e.stopPropagation();
-      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-      imgEl.src = galleryItems[currentIndex].imageUrl;
-      titleEl.textContent = galleryItems[currentIndex].title;
-      descEl.textContent = galleryItems[currentIndex].description;
-    });
-
-    rightArrow.addEventListener('click', function(e) {
-      e.stopPropagation();
-      currentIndex = (currentIndex + 1) % galleryItems.length;
-      imgEl.src = galleryItems[currentIndex].imageUrl;
-      titleEl.textContent = galleryItems[currentIndex].title;
-      descEl.textContent = galleryItems[currentIndex].description;
-    });
-
-    overlay.addEventListener('click', function() {
-      document.body.removeChild(overlay);
-    });
-
-    overlay.appendChild(leftArrow);
-    overlay.appendChild(imgEl);
-    overlay.appendChild(titleEl);
-    overlay.appendChild(descEl);
-    overlay.appendChild(rightArrow);
-    document.body.appendChild(overlay);
+  // Add click handler to open gallery
+  div.addEventListener('click', function() {
+    openGallery(item, index);
   });
-
   return div;
 }
 
-// 3. DOMContentLoaded or other handlers that use the arrays
-document.addEventListener('DOMContentLoaded', function() {
-  // Select all images with the class 'portfolio-image'
-  const portfolioImages = document.querySelectorAll('.portfolio-image');
-  portfolioImages.forEach(img => {
-    img.addEventListener('click', function() {
-      // Create overlay
-      const overlay = document.createElement('div');
-      overlay.style.position = 'fixed';
-      overlay.style.top = '0';
-      overlay.style.left = '0';
-      overlay.style.width = '100vw';
-      overlay.style.height = '100vh';
-      overlay.style.background = 'rgba(0,0,0,0.9)';
-      overlay.style.display = 'flex';
-      overlay.style.alignItems = 'center';
-      overlay.style.justifyContent = 'center';
-      overlay.style.zIndex = '10000';
+// Create a reusable gallery function
+function openGallery(item, index) {
+  let galleryItems;
+  
+  // Determine which gallery to show based on subcategory and index
+  if (item.subcategory === "photography") {
+    if (index === 0) {
+      galleryItems = portfolioData.photography.filter(i => i.category === "headshot");
+    } else if (index === 1) {
+      galleryItems = portfolioData.photography.filter(i => i.category === "production");
+    } else if (index === 2) {
+      galleryItems = portfolioData.photography.filter(i => i.category === "graduation");
+    } else if (index === 3) {
+      galleryItems = portfolioData.photography.filter(i => i.category === "portrait");
+    } else if (index === 4) {
+      galleryItems = portfolioData.photography.filter(i => i.category === "event");
+    } else {
+      galleryItems = portfolioData.photography.filter(i => i.category === item.category);
+    }
+  } else if (item.subcategory === "acting") {
+    if (index === 0) {
+      galleryItems = portfolioData.acting.filter(i => i.category === "theater");
+    } else if (index === 1) {
+      galleryItems = portfolioData.acting.filter(i => i.category === "film");
+    } else if (index === 2) {
+      galleryItems = portfolioData.acting.filter(i => i.category === "performance");
+    } else {
+      galleryItems = portfolioData.acting.filter(i => i.category === item.category);
+    }
+  } else {
+    // Default fallback - find items with same category
+    galleryItems = [item]; // Fallback to just this item
+  }
+  
+  let currentIndex = galleryItems.findIndex(i => i.imageUrl === item.imageUrl);
+  if (currentIndex === -1) currentIndex = 0;
 
-      // Create image element
-      const imgEl = document.createElement('img');
-      imgEl.src = theaterGallery[0];
-      imgEl.style.maxWidth = '90vw';
-      imgEl.style.maxHeight = '90vh';
-      imgEl.style.borderRadius = '0.5rem';
-      imgEl.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3)';
+  const overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = '0';
+  overlay.style.left = '0';
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.background = 'rgba(0,0,0,0.9)';
+  overlay.style.display = 'flex';
+  overlay.style.flexDirection = 'column';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.zIndex = '10000';
 
-      // Close overlay on click
-      overlay.addEventListener('click', function() {
-        document.body.removeChild(overlay);
-      });
+  const imgEl = document.createElement('img');
+  imgEl.src = galleryItems[currentIndex].imageUrl;
+  imgEl.style.maxWidth = '90vw';
+  imgEl.style.maxHeight = '70vh';
+  imgEl.style.borderRadius = '0.5rem';
+  imgEl.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3)';
+  imgEl.style.marginBottom = '2rem';
 
-      overlay.appendChild(imgEl);
-      document.body.appendChild(overlay);
-    });
+  const titleEl = document.createElement('h2');
+  titleEl.textContent = galleryItems[currentIndex].title;
+  titleEl.style.color = '#fff';
+  titleEl.style.margin = '0 0 0.5rem 0';
+  titleEl.style.textAlign = 'center';
+
+  const descEl = document.createElement('p');
+  descEl.textContent = galleryItems[currentIndex].description;
+  descEl.style.color = '#fff';
+  descEl.style.margin = '0 0 2rem 0';
+  descEl.style.textAlign = 'center';
+  descEl.style.maxWidth = '80vw';
+
+  const leftArrow = document.createElement('div');
+  leftArrow.textContent = '<';
+  leftArrow.style.position = 'absolute';
+  leftArrow.style.left = '2rem';
+  leftArrow.style.top = '50%';
+  leftArrow.style.transform = 'translateY(-50%)';
+  leftArrow.style.fontSize = '2.5rem';
+  leftArrow.style.color = '#fff';
+  leftArrow.style.cursor = 'pointer';
+  leftArrow.style.userSelect = 'none';
+  leftArrow.style.zIndex = '10001';
+
+  const rightArrow = document.createElement('div');
+  rightArrow.textContent = '>';
+  rightArrow.style.position = 'absolute';
+  rightArrow.style.right = '2rem';
+  rightArrow.style.top = '50%';
+  rightArrow.style.transform = 'translateY(-50%)';
+  rightArrow.style.fontSize = '2.5rem';
+  rightArrow.style.color = '#fff';
+  rightArrow.style.cursor = 'pointer';
+  rightArrow.style.userSelect = 'none';
+  rightArrow.style.zIndex = '10001';
+
+  leftArrow.addEventListener('click', function(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    imgEl.src = galleryItems[currentIndex].imageUrl;
+    titleEl.textContent = galleryItems[currentIndex].title;
+    descEl.textContent = galleryItems[currentIndex].description;
   });
-});
+
+  rightArrow.addEventListener('click', function(e) {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    imgEl.src = galleryItems[currentIndex].imageUrl;
+    titleEl.textContent = galleryItems[currentIndex].title;
+    descEl.textContent = galleryItems[currentIndex].description;
+  });
+
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) {
+      document.body.removeChild(overlay);
+    }
+  });
+
+  // Add keyboard navigation
+  function handleKeydown(e) {
+    if (e.key === 'Escape') {
+      document.body.removeChild(overlay);
+      document.removeEventListener('keydown', handleKeydown);
+    } else if (e.key === 'ArrowLeft') {
+      leftArrow.click();
+    } else if (e.key === 'ArrowRight') {
+      rightArrow.click();
+    }
+  }
+  document.addEventListener('keydown', handleKeydown);
+
+  overlay.appendChild(leftArrow);
+  overlay.appendChild(imgEl);
+  overlay.appendChild(rightArrow);
+  if (item.category != 'headshot' && item.category != 'graduation' && item.category != 'portrait' && item.category != 'event') {
+    overlay.appendChild(titleEl);
+    overlay.appendChild(descEl);
+  }
+  document.body.appendChild(overlay);
+}
+
+
 
 // Handle window resize for responsive behavior
 window.addEventListener('resize', function() {

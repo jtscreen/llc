@@ -436,6 +436,9 @@ p {
   color: var(--medium-blue);
   margin-bottom: var(--spacing-md);
 }
+#photography .bio{
+    background-color: var(--light-blue);
+}
 
 .fade-in { opacity: 1; }
 .fade-out { opacity: 0; }

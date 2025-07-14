@@ -963,7 +963,7 @@ let portfolioData = {
       category: "event",
       subcategory: "photography",
       year: 2024,
-      featured: true
+      featured: false
     },
     {
       id: 64,
@@ -1003,7 +1003,7 @@ let portfolioData = {
       category: "event",
       subcategory: "photography",
       year: 2024,
-      featured: false
+      featured: true
     },
     {
       id: 68,
