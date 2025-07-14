@@ -275,7 +275,8 @@ p {
 .bio,
 .recent-work,
 .services,
-.featured-work {
+.featured-work,
+.rates {
   padding: var(--spacing-3xl) 0;
 }
 
@@ -836,6 +837,46 @@ p {
   color: var(--medium-blue);
 }
 
+/*tables*/
+table, td, th {
+    border: 1px black solid;
+    padding: 15px;
+    text-align: left;
+}
+table {
+    width: 100%;
+    margin-bottom: 5vh;
+    border-collapse: collapse;
+    background-color: white;
+}
+.title-row{
+    background-color: #ee6c4d;
+    color: white;
+    height: 10vh;
+    font-size: 1.3rem;
+}
+
+.rates-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem; /* space between tables */
+  margin-top: 2rem;
+}
+
+.rate-section h1 {
+  margin-bottom: 0.5rem;
+}
+
+.rate-section table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+#table-text-color {
+  color: var(--dark-blue);
+}
+
 /* Footer */
 .footer {
   background-color: var(--dark-blue);
@@ -1013,6 +1054,12 @@ p {
   
   .bio-content {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rates-grid {
+    grid-template-columns: 1fr;
   }
 }
 
