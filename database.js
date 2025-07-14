@@ -307,7 +307,7 @@ let portfolioData = {
   ],
   music: [
     {
-      id: 5,
+      id: 1,
       title: "Nocturne in E Minor",
       description: "Solo Piano - Premiered at Carnegie Hall",
       imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600",
@@ -316,7 +316,7 @@ let portfolioData = {
       featured: true
     },
     {
-      id: 6,
+      id: 2,
       title: "Symphony No. 1",
       description: "Full Orchestra - New York Philharmonic",
       imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600",
@@ -325,7 +325,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 7,
+      id: 3,
       title: "Acoustic Sessions",
       description: "Original Songs - Blue Note Records",
       imageUrl: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600",
@@ -334,7 +334,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 8,
+      id: 4,
       title: "Electronic Fusion",
       description: "Contemporary Album - Modern Sounds",
       imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600",
@@ -345,74 +345,82 @@ let portfolioData = {
   ],
   photography: [
     {
-      id: 9,
-      title: "Natural Light Portrait",
-      description: "Studio Series, 2024",
-      imageUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=900",
-      category: "photography",
-      year: 2024,
+      id: 1,
+      title: "Arden(1)",
+      description: "Arden Cathers Headshot",
+      imageUrl: "img/photo/headshot-gallery/arden1.jpg",
+      category: "headshot",
+      subcategory: "photography",
+      year: 2023,
       featured: true
     },
     {
-      id: 10,
-      title: "Horizon Lines",
-      description: "Fine Art Series, 2024",
-      imageUrl: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400",
-      category: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      id: 11,
-      title: "Urban Stories",
-      description: "Documentary Series, 2023",
-      imageUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800",
-      category: "photography",
+      id: 2,
+      title: "Arden(2)",
+      description: "Arden Cathers Headshot",
+      imageUrl: "img/photo/headshot-gallery/arden2.jpg",
+      category: "headshot",
+      subcategory: "photography",
       year: 2023,
       featured: false
     },
     {
-      id: 12,
+      id: 3,
+      title: "Bridget(1)",
+      description: "Bridget Barnes Headshot",
+      imageUrl: "img/photo/headshot-gallery/bridget1.JPG",
+      category: "headshot",
+      subcategory: "photography",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 4,
       title: "Editorial Fashion",
       description: "Magazine Feature, 2024",
       imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=900",
-      category: "photography",
+      category: "headshot",
+      subcategory: "photography",
       year: 2024,
       featured: false
     },
     {
-      id: 13,
+      id: 5,
       title: "Mountain Solitude",
       description: "Nature Series, 2023",
       imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400",
-      category: "photography",
+      category: "headshot",
+      subcategory: "photography",
       year: 2023,
       featured: false
     },
     {
-      id: 14,
+      id: 6,
       title: "Executive Portrait",
       description: "Corporate Commission, 2024",
       imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=900",
-      category: "photography",
+      category: "production",
+      subcategory: "photography",
       year: 2024,
       featured: false
     },
     {
-      id: 15,
+      id: 7,
       title: "Intimate Moments",
       description: "Wedding Series, 2024",
       imageUrl: "https://images.unsplash.com/photo-1502323777036-f29e3972d82f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400",
-      category: "photography",
+      category: "production",
+      subcategory: "photography",
       year: 2024,
       featured: false
     },
     {
-      id: 16,
+      id: 8,
       title: "Still Life Study",
       description: "Art Collection, 2023",
       imageUrl: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800",
-      category: "photography",
+      category: "production",
+      subcategory: "photography",
       year: 2023,
       featured: false
     }

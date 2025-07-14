@@ -255,6 +255,7 @@ function loadCategoryItems(category) {
       const theaterItems = portfolioData.acting.filter(item => item.category === 'theater');
       const featuredFilm = portfolioData.acting.find(item => item.category === 'film' && item.featured);
       const featuredPerformance = portfolioData.acting.find(item => item.category === 'performance' && item.featured);
+
       // Build the array for the grid
       const items = [
         theaterItems[0],
@@ -265,8 +266,26 @@ function loadCategoryItems(category) {
       items.forEach((item, idx) => {
         grid.appendChild(createPortfolioItem(item, false, idx));
       });
-    } else {
-      // Default: show first 3 items
+    } else if (category === 'photography') {
+        const headshotItems = portfolioData.photo.filter(item => item.category === 'headshot');
+        const productionItems = portfolioData.photo.find(item => item.category === 'production' && item.featured);
+        const gradItems = portfolioData.photo.find(item => item.category === 'grad' && item.featured);
+        const portraitItems = portfolioData.photo.find(item => item.category === 'portrait' && item.featured);   
+        const eventItems = portfolioData.photo.find(item => item.category === 'event' && item.featured);         
+
+              // Build the array for the grid
+        const items = [
+            headshotItems[0],
+            productionItems,
+            gradItems,
+            portraitItems,
+            eventItems
+        ].filter(Boolean); // Remove undefined if any
+
+        items.forEach((item, idx) => {
+            grid.appendChild(createPortfolioItem(item, false, idx));
+        });
+    }else if (category === 'music') {
       const items = portfolioData[category] || [];
       items.slice(0, 3).forEach((item, idx) => {
         grid.appendChild(createPortfolioItem(item, category === 'photography', idx));
