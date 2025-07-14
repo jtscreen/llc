@@ -38,20 +38,20 @@ function closeMobileMenu() {
   lucide.createIcons();
 }
 
-// Page navigation
+//Page Navigation
 function showPage(pageId) {
-  // Hide all pages
-  document.querySelectorAll('.page').forEach(page => {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(page => {
     page.classList.remove('active');
   });
-  
+
   // Show selected page
   const page = document.getElementById(pageId);
   if (page) {
     page.classList.add('active');
     currentPage = pageId;
     updateNavigation();
-    
+
     // Load page-specific data
     if (pageId === 'home') {
       loadFeaturedItems();
@@ -67,7 +67,6 @@ function showPage(pageId) {
       showPortfolioGalleries();
     }
   }
-  // Scroll to top
   window.scrollTo(0, 0);
 }
 
@@ -87,6 +86,7 @@ function updateNavigation() {
     if (link.getAttribute('data-page') === currentPage) {
       link.classList.add('active');
     }
+    closeMobileMenu();
   });
 }
 
@@ -454,9 +454,9 @@ function openGallery(item, index) {
 
 // Handle window resize for responsive behavior
 window.addEventListener('resize', function() {
-  if (window.innerWidth >= 768 && mobileMenuOpen) {
-    closeMobileMenu();
-  }
+    if (window.innerWidth >= 768) {
+        closeMobileMenu();
+    }
 });
 
 // Handle scroll behavior
