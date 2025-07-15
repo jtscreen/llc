@@ -33,9 +33,13 @@ function closeMobileMenu() {
   const mobileNav = document.getElementById('mobileNav');
   const icon = document.querySelector('.nav-mobile-btn i');
   
-  mobileNav.classList.remove('active');
-  icon.setAttribute('data-lucide', 'menu');
-  lucide.createIcons();
+  if (mobileNav) {
+    mobileNav.classList.remove('active');
+  }
+  if (icon) {
+    icon.setAttribute('data-lucide', 'menu');
+    lucide.createIcons();
+  }
 }
 
 //Page Navigation
@@ -86,7 +90,6 @@ function updateNavigation() {
     if (link.getAttribute('data-page') === currentPage) {
       link.classList.add('active');
     }
-    closeMobileMenu();
   });
 }
 
@@ -144,27 +147,6 @@ function setupHeadshotCarousel() {
   }
 }
 
-// When fade-out transition ends, swap images and reset
-currentImg.addEventListener('transitionend', function handler(e) {
-  if (e.propertyName !== 'opacity' || !currentImg.classList.contains('fade-out')) return;
-  currentHeadshot = (currentHeadshot + 1) % headshots.length;
-  currentImg.src = headshots[currentHeadshot];
-  nextImg.src = headshots[(currentHeadshot + 1) % headshots.length];
-  currentImg.classList.remove('fade-out');
-  currentImg.classList.add('fade-in');
-  nextImg.classList.remove('fade-in');
-  nextImg.classList.add('fade-out');
-});
-
-setInterval(crossfadeHeadshot, 8000);
-
-window.addEventListener('DOMContentLoaded', () => {
-  currentImg.src = headshots[0];
-  nextImg.src = headshots[1];
-  currentImg.classList.add('fade-in');
-  nextImg.classList.add('fade-out');
-});
-
 // Load featured items for home page
 function loadFeaturedItems() {
   const featuredGrid = document.getElementById('featuredGrid');
@@ -220,9 +202,20 @@ function loadCategoryItems(category) {
   const grid = document.getElementById(`${category}Grid`);
   const loading = document.getElementById(`${category}Loading`);
   
-  if (!grid || !loading) return;
+  if (!grid) {
+    console.error(`Grid element not found: ${category}Grid`);
+    return;
+  }
   
-  loading.style.display = 'block';
+  console.log(`Loading ${category} items...`);
+  
+  // Show loading state if loading element exists
+  if (loading) {
+    loading.style.display = 'block';
+    console.log(`Showing loading for ${category}`);
+  } else {
+    console.warn(`Loading element not found: ${category}Loading`);
+  }
   grid.style.display = 'none';
   
   setTimeout(() => {
@@ -230,47 +223,63 @@ function loadCategoryItems(category) {
 
     if (category === 'acting') {
       const theaterItems = portfolioData.acting.filter(item => item.category === 'theater');
-      const featuredFilm = portfolioData.acting.find(item => item.category === 'film' && item.featured);
-      const featuredPerformance = portfolioData.acting.find(item => item.category === 'performance' && item.featured);
+      const filmItems = portfolioData.acting.filter(item => item.category === 'film');
+      const performanceItems = portfolioData.acting.filter(item => item.category === 'performance');
 
-      // Build the array for the grid
+      console.log('Theater items found:', theaterItems.length);
+      console.log('Film items found:', filmItems.length);
+      console.log('Performance items found:', performanceItems.length);
+
+      // Build the array for the grid - get featured item from each category, fallback to first item
       const items = [
-        theaterItems[0],
-        featuredFilm,
-        featuredPerformance
+        theaterItems.find(item => item.featured) || theaterItems[0],
+        filmItems.find(item => item.featured) || filmItems[0], 
+        performanceItems.find(item => item.featured) || performanceItems[0]
       ].filter(Boolean); // Remove undefined if any
+
+      console.log('Total items to display:', items.length);
 
       items.forEach((item, idx) => {
         grid.appendChild(createPortfolioItem(item, false, idx));
       });
     } else if (category === 'photography') {
         const headshotItems = portfolioData.photography.filter(item => item.category === 'headshot');
-        const productionItems = portfolioData.photography.find(item => item.category === 'production' && item.featured);
-        const gradItems = portfolioData.photography.find(item => item.category === 'graduation' && item.featured);
-        const portraitItems = portfolioData.photography.find(item => item.category === 'portrait' && item.featured);   
-        const eventItems = portfolioData.photography.find(item => item.category === 'event' && item.featured);         
+        const productionItems = portfolioData.photography.filter(item => item.category === 'production');
+        const gradItems = portfolioData.photography.filter(item => item.category === 'graduation');
+        const portraitItems = portfolioData.photography.filter(item => item.category === 'portrait');   
+        const eventItems = portfolioData.photography.filter(item => item.category === 'event');         
 
-        // Build the array for the grid
+        console.log('Photography items found:', headshotItems.length, productionItems.length, gradItems.length, portraitItems.length, eventItems.length);
+
+        // Build the array for the grid - get featured item from each category, fallback to first item
         const items = [
-            headshotItems[0],
-            productionItems,
-            gradItems,
-            portraitItems,
-            eventItems
+            headshotItems.find(item => item.featured) || headshotItems[0],
+            productionItems.find(item => item.featured) || productionItems[0],
+            gradItems.find(item => item.featured) || gradItems[0],
+            portraitItems.find(item => item.featured) || portraitItems[0],
+            eventItems.find(item => item.featured) || eventItems[0]
         ].filter(Boolean); // Remove undefined if any
+
+        console.log('Total photography items to display:', items.length);
 
         items.forEach((item, idx) => {
             grid.appendChild(createPortfolioItem(item, false, idx));
         });
-    }else if (category === 'music') {
+    } else if (category === 'music') {
       const items = portfolioData[category] || [];
+      console.log('Music items found:', items.length);
       items.slice(0, 3).forEach((item, idx) => {
-        grid.appendChild(createPortfolioItem(item, category === 'photography', idx));
+        grid.appendChild(createPortfolioItem(item, false, idx));
       });
     }
     
-    loading.style.display = 'none';
+    // Hide loading state if loading element exists
+    if (loading) {
+      loading.style.display = 'none';
+      console.log(`Hiding loading for ${category}`);
+    }
     grid.style.display = 'grid';
+    console.log(`Showing grid for ${category} with ${grid.children.length} items`);
   }, 300);
 }
 

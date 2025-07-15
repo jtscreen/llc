@@ -58,7 +58,7 @@ let portfolioData = {
       title: "[Title of Show]",
       description: "Lead - Hunter",
       imageUrl: "img/acting/tgallery/tos1.jpg",
-      category: "acting",
+      category: "theater",
       subcategory: "acting",
       year: 2024,
       featured: false
@@ -1017,9 +1017,9 @@ let portfolioData = {
     },
     {
       id: 69,
-      title: "Kana",
+      title: "kana",
       description: "Kana Seiki Photo",
-      imageUrl: "img/photo/event-gallery/kana3.jpg",
+      imageUrl: "img/photo/event-gallery/kana3.JPG",
       category: "event",
       subcategory: "photography",
       year: 2024,
