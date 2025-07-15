@@ -63,6 +63,7 @@ function showPage(pageId) {
       loadCategoryItems('acting');
       setupHeadshotCarousel();
       showAllGalleries();
+      window.scrollTo(0, 0);
     } else if (pageId === 'music') {
       loadCategoryItems('music');
     } else if (pageId === 'photography') {
