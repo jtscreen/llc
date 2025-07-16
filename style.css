@@ -92,7 +92,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
+  height: fit-content;
 }
 
 .nav-logo {
@@ -109,6 +109,18 @@ p {
 
 .logo-link:hover {
   color: var(--orange);
+}
+
+.logo{
+  width: 5rem;
+  height: auto;
+  display: inline-block;
+  margin: 0.5rem 0 0 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .nav-desktop {
@@ -275,7 +287,8 @@ p {
 .bio,
 .recent-work,
 .services,
-.featured-work {
+.contact,
+.booking{
   padding: var(--spacing-3xl) 0;
 }
 
@@ -835,6 +848,85 @@ p {
 
 .service-description {
   color: var(--medium-blue);
+}
+
+/* Contact Form */
+.contact {
+  background-color: var(--white);
+}
+
+.contact-description {
+  font-size: 1.25rem;
+  color: var(--medium-blue);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+  text-align: center;
+}
+
+.contact-subdescription {
+  font-size: 1rem;
+  color: var(--orange);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--light-blue);
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  background-color: var(--white);
+  color: var(--dark-blue);
+  transition: border-color 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--medium-blue);
+}
+
+.contact-form select {
+  cursor: pointer;
+}
+
+.contact-form select option {
+  color: var(--dark-blue);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.contact-form .btn {
+  min-width: 200px;
 }
 
 /* Footer */

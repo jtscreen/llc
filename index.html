@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joshua Screen - Actor • Musician • Photographer</title>
+  <title>Joshua Screen</title>
   <meta name="description" content="Official website of Joshua Screen — Actor, Music Artist, Photographer, and Creative.">
   
   <!-- Open Graph tags -->
@@ -27,7 +27,7 @@
     <div class="nav-container">
       <div class="nav-content">
         <div class="nav-logo">
-          <a href="#" onclick="showPage('home')" class="logo-link">Joshua Screen</a>
+          <a href="#" onclick="showPage('home')" class="logo-link"><img class="logo" src="img/logo/logo.png"></a>
         </div>
         
         <!-- Desktop Navigation -->
@@ -53,6 +53,7 @@
         <a href="#" onclick="showPage('acting'); closeMobileMenu()" class="nav-mobile-link" data-page="acting">Acting</a>
         <a href="#" onclick="showPage('music'); closeMobileMenu()" class="nav-mobile-link" data-page="music">Music</a>
         <a href="#" onclick="showPage('photography'); closeMobileMenu()" class="nav-mobile-link" data-page="photography">Photography</a>
+        <a href="#" onclick="showPage('contact'); closeMobileMenu()" class="nav-mobile-link" data-page="contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -474,7 +475,42 @@
       <section class="contact">
         <div class="container">
           <h2 class="section-title">Contact</h2>
-          <p class="contact-description"></p>
+          <p class="contact-description">Let's collaborate! Whether you're interested in acting, photography, music, or web design services, I'd love to hear from you. Fill out the form below and I'll get back to you as soon as possible.</p>
+          
+          <div class="contact-form-container">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+              <input type="hidden" name="access_key" value="83d56d93-5eb7-4887-8f19-179a1c6a9478">        
+              <input type="text" name="name" placeholder="Name" required>
+              <input type="email" name="email" placeholder="Email" required>
+              <select name="interest" required>
+                <option value="" disabled selected>Area of Interest</option>
+                <option>Acting</option>
+                <option>Photography</option>
+                <option>Music</option>
+                <option>Web Design</option>
+                <option>Other</option>
+              </select>
+              <textarea name="message" placeholder="Message" required></textarea>
+              <input type="hidden" name="redirect" value="https://web3forms.com/success">
+              <div class="form-button">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking">
+        <div class="container">
+          <h2 class="section-title">Booking</h2>
+          <p class="contact-description">For inquiries, collaborations, or bookings, please fill out this form, reach out via email, or connect with me on social media.</p>
+          <p class="contact-subdescription">By booking an appointment, you acknowledge and agree to the <a href="../../img/docs/Terms&Conditions.pdf" target="_blank">terms and conditions</a>.</p>
+          <div id="calendar">
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/jtscreen23?hide_landing_page_details=1&hide_gdpr_banner=1&text_color=3d5a80&primary_color=ee6c4d" style="min-width:320px;height:65vh;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+          </div>
         </div>
       </section>
     </div>
