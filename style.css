@@ -206,7 +206,7 @@ p {
 
   background-image: url('img/logo/coverPhoto.JPG');
   background-size: cover;
-  background-repeat: none;
+  background-repeat: no-repeat;
 }
 
 .hero-content {
