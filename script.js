@@ -398,6 +398,7 @@ function openGallery(item, index) {
   leftArrow.style.top = '50%';
   leftArrow.style.transform = 'translateY(-50%)';
   leftArrow.style.fontSize = '2.5rem';
+  leftArrow.style.padding = '40vh 5vw'
   leftArrow.style.color = '#fff';
   leftArrow.style.cursor = 'pointer';
   leftArrow.style.userSelect = 'none';
@@ -410,10 +411,23 @@ function openGallery(item, index) {
   rightArrow.style.top = '50%';
   rightArrow.style.transform = 'translateY(-50%)';
   rightArrow.style.fontSize = '2.5rem';
+  rightArrow.style.padding = '40vh 5vw'
   rightArrow.style.color = '#fff';
   rightArrow.style.cursor = 'pointer';
   rightArrow.style.userSelect = 'none';
   rightArrow.style.zIndex = '10001';
+
+  const close = document.createElement('div');
+  close.textContent = 'x';
+  close.style.position = 'absolute';
+  close.style.right = '2rem';
+  close.style.top = '0%';
+  close.style.padding = "2rem";
+  close.style.fontSize = '2.5rem';
+  close.style.color = '#fff';
+  close.style.cursor = 'pointer';
+  close.style.userSelect = 'none';
+  close.style.zIndex = '10001';
 
   leftArrow.addEventListener('click', function(e) {
     e.stopPropagation();
@@ -431,11 +445,17 @@ function openGallery(item, index) {
     descEl.textContent = galleryItems[currentIndex].description;
   });
 
+  close.addEventListener('click', function(e) {
+    document.body.removeChild(overlay);
+  });
+
+  /*
   overlay.addEventListener('click', function(e) {
     if (e.target === overlay) {
       document.body.removeChild(overlay);
     }
   });
+  */
 
   // Add keyboard navigation
   function handleKeydown(e) {
@@ -453,6 +473,7 @@ function openGallery(item, index) {
   overlay.appendChild(leftArrow);
   overlay.appendChild(imgEl);
   overlay.appendChild(rightArrow);
+  overlay.appendChild(close);
   if (item.category != 'headshot' && item.category != 'graduation' && item.category != 'portrait' && item.category != 'event') {
     overlay.appendChild(titleEl);
     overlay.appendChild(descEl);
