@@ -95,9 +95,9 @@ function updateNavigation() {
 }
 
 const headshots = [
-  'img/home/headshot1.jpg',
-  'img/home/headshot2.jpg',
-  'img/home/headshot3.jpg'
+  'img/home/headshot1.JPG',
+  'img/home/headshot2.JPG',
+  'img/home/headshot3.JPG'
 ];
 
 let currentHeadshot = 0;
