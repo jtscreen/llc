@@ -1,0 +1,14 @@
+title: "Joshua Screen"
+description: "Official website of Joshua Screen — Actor, Music Artist, Photographer, and Creative."
+url: "https://www.jtscreen.com"
+
+author:
+  name: "Joshua Screen"
+  email: "jtscreen23@gmail.com" 
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+markdown: kramdown
+theme: minima 
