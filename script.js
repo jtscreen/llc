@@ -80,11 +80,6 @@ function showPage(pageId) {
   window.scrollTo(0, 0);
 }
 
-window.addEventListener('popstate', function () {
-  const path = window.location.pathname.replace('/', '') || 'home';
-  showPage(path);
-});
-
 // Update navigation active states
 function updateNavigation() {
   // Desktop navigation
