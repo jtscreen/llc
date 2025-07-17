@@ -496,8 +496,3 @@ window.addEventListener('popstate', event => {
   showPage(page);
 });
 
-window.addEventListener('beforeunload', (event) => {
-  showPage(home);
-  history.pushState({ page: pageId }; 
-  event.returnValue = ''; 
-});
