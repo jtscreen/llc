@@ -495,4 +495,3 @@ window.addEventListener('popstate', event => {
   const page = (event.state && event.state.page) || location.pathname.replace('/', '') || 'home';
   showPage(page);
 });
-
