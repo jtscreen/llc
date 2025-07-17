@@ -255,7 +255,7 @@ function loadCategoryItems(category) {
     } else if (category === 'music') {
       const items = portfolioData[category] || [];
 
-      items.slice(0, 3).forEach((item, idx) => {
+      items.slice(0, 0).forEach((item, idx) => {
         grid.appendChild(createPortfolioItem(item, false, idx));
       });
     }
