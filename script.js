@@ -495,3 +495,9 @@ window.addEventListener('popstate', event => {
   const page = (event.state && event.state.page) || location.pathname.replace('/', '') || 'home';
   showPage(page);
 });
+
+window.addEventListener('beforeunload', (event) => {
+  showPage(home);
+  history.pushState({ page: pageId }; 
+  event.returnValue = ''; 
+});
