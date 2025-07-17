@@ -28,16 +28,16 @@
     <div class="nav-container">
       <div class="nav-content">
         <div class="nav-logo">
-          <a href="#" onclick="showPage('home')" class="logo-link"><img class="logo" src="img/logo/logo.png"></a>
+          <a href="#" onclick="navigateTo('home'); return false" class="logo-link"><img class="logo" src="img/logo/logo.png"></a>
         </div>
         
         <!-- Desktop Navigation -->
         <div class="nav-desktop">
-          <a href="#" onclick="showPage('home')" class="nav-link" data-page="home">Home</a>
-          <a href="#" onclick="showPage('acting')" class="nav-link" data-page="acting">Acting</a>
-          <a href="#" onclick="showPage('music')" class="nav-link" data-page="music">Music</a>
-          <a href="#" onclick="showPage('photography')" class="nav-link" data-page="photography">Photography</a>
-          <a href="#" onclick="showPage('contact')" class="nav-link" data-page="contact">Contact</a>
+          <a href="#" onclick="navigateTo('home'); return false" class="nav-link" data-page="home">Home</a>
+          <a href="/acting" onclick="navigateTo('acting'); return false" class="nav-link" data-page="acting">Acting</a>
+          <a href="/music" onclick="navigateTo('music'); return false" class="nav-link" data-page="music">Music</a>
+          <a href="/photography" onclick="navigateTo('photography'); return false" class="nav-link" data-page="photography">Photography</a>
+          <a href="/contact" onclick="navigateTo('contact'); return false" class="nav-link" data-page="contact">Contact</a>
         </div>
         
         <!-- Mobile Navigation Button -->
@@ -50,11 +50,11 @@
     <!-- Mobile Navigation -->
     <div class="nav-mobile" id="mobileNav">
       <div class="nav-mobile-content">
-        <a href="#" onclick="showPage('home'); closeMobileMenu()" class="nav-mobile-link" data-page="home">Home</a>
-        <a href="#" onclick="showPage('acting'); closeMobileMenu()" class="nav-mobile-link" data-page="acting">Acting</a>
-        <a href="#" onclick="showPage('music'); closeMobileMenu()" class="nav-mobile-link" data-page="music">Music</a>
-        <a href="#" onclick="showPage('photography'); closeMobileMenu()" class="nav-mobile-link" data-page="photography">Photography</a>
-        <a href="#" onclick="showPage('contact'); closeMobileMenu()" class="nav-mobile-link" data-page="contact">Contact</a>
+        <a href="#" onclick="navigateTo('home'); closeMobileMenu(); return false" class="nav-mobile-link" data-page="home">Home</a>
+        <a href="/acting" onclick="navigateTo('acting'); closeMobileMenu(); return false" class="nav-mobile-link" data-page="acting">Acting</a>
+        <a href="/music" onclick="navigateTo('music'); closeMobileMenu(); return false" class="nav-mobile-link" data-page="music">Music</a>
+        <a href="/photography" onclick="navigateTo('photography'); closeMobileMenu(); return false" class="nav-mobile-link" data-page="photography">Photography</a>
+        <a href="/contact" onclick="navigateTo('contact'); closeMobileMenu(); return false" class="nav-mobile-link" data-page="contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -91,7 +91,7 @@
           <div class="disciplines">
             <div class="discipline">
               <div class="discipline-icon">
-                <a href="#" onclick="showPage('acting')" class="nav-link" data-page="acting">
+                <a href="/acting" onclick="navigateTo('acting'); return false" class="nav-link" data-page="acting">
                   <i data-lucide="theater" class="icon"></i>
                 </a>
               </div>
@@ -103,7 +103,7 @@
             
             <div class="discipline">
               <div class="discipline-icon">
-                <a href="#" onclick="showPage('music')" class="nav-link" data-page="music">
+                <a href="/music" onclick="navigateTo('music'); return false" class="nav-link" data-page="music">
                   <i data-lucide="music" class="icon"></i>
                 </a>
               </div>
@@ -115,7 +115,7 @@
 
             <div class="discipline">
               <div class="discipline-icon">
-                <a href="#" onclick="showPage('photography')" class="nav-link" data-page="photography">
+                <a href="/photography" onclick="navigateTo('photography'); return false" class="nav-link" data-page="photography">
                   <i data-lucide="camera" class="icon"></i>
                 </a>
               </div>
@@ -309,7 +309,6 @@
           <h2 class="section-subtitle">Coming Soon</h2>
           <!--End of temp section-->
 
-          <!--
           <div class="portfolio-loading" id="musicLoading">
             <div class="loading-grid">
               <div class="loading-item">
@@ -335,6 +334,7 @@
             </div>
           </div>
       
+          <!--
           <div class="portfolio-grid" id="musicGrid">
             /// Music items will be loaded here
           </div>

@@ -7,7 +7,9 @@ let currentPage = 'home';
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
   lucide.createIcons();
-  showPage('home');
+
+  const initialPage = location.pathname.replace('/', '') || 'home';
+  showPage(initialPage);
   updateNavigation();
 });
 
@@ -24,7 +26,6 @@ function toggleMobileMenu() {
     mobileNav.classList.remove('active');
     icon.setAttribute('data-lucide', 'menu');
   }
-  
   lucide.createIcons();
 }
 
@@ -44,6 +45,7 @@ function closeMobileMenu() {
 
 //Page Navigation
 function showPage(pageId) {
+  console.log(`Showing page: ${pageId}`);
     // Hide all pages
     document.querySelectorAll('.page').forEach(page => {
     page.classList.remove('active');
@@ -56,10 +58,8 @@ function showPage(pageId) {
     currentPage = pageId;
     updateNavigation();
 
-    history.pushState(null, '', `/${pageId}`);
-
     // Load page-specific data
-     if (pageId === 'home') {
+    if (pageId === 'home') {
       loadFeaturedItems();
       closeMobileMenu();
     } else if (pageId === 'acting') {
@@ -97,6 +97,11 @@ function updateNavigation() {
       link.classList.add('active');
     }
   });
+}
+
+function navigateTo(pageId) {
+  showPage(pageId);
+  history.pushState({ page: pageId }, '', `/${pageId}`);
 }
 
 const headshots = [
@@ -249,6 +254,7 @@ function loadCategoryItems(category) {
         });
     } else if (category === 'music') {
       const items = portfolioData[category] || [];
+
       items.slice(0, 3).forEach((item, idx) => {
         grid.appendChild(createPortfolioItem(item, false, idx));
       });
@@ -483,4 +489,9 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape' && mobileMenuOpen) {
     closeMobileMenu();
   }
+});
+
+window.addEventListener('popstate', event => {
+  const page = (event.state && event.state.page) || location.pathname.replace('/', '') || 'home';
+  showPage(page);
 });
