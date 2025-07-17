@@ -62,7 +62,6 @@ function showPage(pageId) {
     } else if (pageId === 'acting') {
       loadCategoryItems('acting');
       setupHeadshotCarousel();
-      showAllGalleries();
       window.scrollTo(0, 0);
     } else if (pageId === 'music') {
       loadCategoryItems('music');
@@ -203,20 +202,6 @@ function loadCategoryItems(category) {
   const grid = document.getElementById(`${category}Grid`);
   const loading = document.getElementById(`${category}Loading`);
   
-  if (!grid) {
-    console.error(`Grid element not found: ${category}Grid`);
-    return;
-  }
-  
-  console.log(`Loading ${category} items...`);
-  
-  // Show loading state if loading element exists
-  if (loading) {
-    loading.style.display = 'block';
-    console.log(`Showing loading for ${category}`);
-  } else {
-    console.warn(`Loading element not found: ${category}Loading`);
-  }
   grid.style.display = 'none';
   
   setTimeout(() => {
@@ -227,18 +212,12 @@ function loadCategoryItems(category) {
       const filmItems = portfolioData.acting.filter(item => item.category === 'film');
       const performanceItems = portfolioData.acting.filter(item => item.category === 'performance');
 
-      console.log('Theater items found:', theaterItems.length);
-      console.log('Film items found:', filmItems.length);
-      console.log('Performance items found:', performanceItems.length);
-
       // Build the array for the grid - get featured item from each category, fallback to first item
       const items = [
         theaterItems.find(item => item.featured) || theaterItems[0],
         filmItems.find(item => item.featured) || filmItems[0], 
         performanceItems.find(item => item.featured) || performanceItems[0]
       ].filter(Boolean); // Remove undefined if any
-
-      console.log('Total items to display:', items.length);
 
       items.forEach((item, idx) => {
         grid.appendChild(createPortfolioItem(item, false, idx));
@@ -250,8 +229,6 @@ function loadCategoryItems(category) {
         const portraitItems = portfolioData.photography.filter(item => item.category === 'portrait');   
         const eventItems = portfolioData.photography.filter(item => item.category === 'event');         
 
-        console.log('Photography items found:', headshotItems.length, productionItems.length, gradItems.length, portraitItems.length, eventItems.length);
-
         // Build the array for the grid - get featured item from each category, fallback to first item
         const items = [
             headshotItems.find(item => item.featured) || headshotItems[0],
@@ -261,14 +238,11 @@ function loadCategoryItems(category) {
             eventItems.find(item => item.featured) || eventItems[0]
         ].filter(Boolean); // Remove undefined if any
 
-        console.log('Total photography items to display:', items.length);
-
         items.forEach((item, idx) => {
             grid.appendChild(createPortfolioItem(item, false, idx));
         });
     } else if (category === 'music') {
       const items = portfolioData[category] || [];
-      console.log('Music items found:', items.length);
       items.slice(0, 3).forEach((item, idx) => {
         grid.appendChild(createPortfolioItem(item, false, idx));
       });
@@ -277,10 +251,8 @@ function loadCategoryItems(category) {
     // Hide loading state if loading element exists
     if (loading) {
       loading.style.display = 'none';
-      console.log(`Hiding loading for ${category}`);
     }
     grid.style.display = 'grid';
-    console.log(`Showing grid for ${category} with ${grid.children.length} items`);
   }, 300);
 }
 
