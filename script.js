@@ -481,8 +481,6 @@ function openGallery(item, index) {
   document.body.appendChild(overlay);
 }
 
-
-
 // Handle window resize for responsive behavior
 window.addEventListener('resize', function() {
     if (window.innerWidth >= 768) {
