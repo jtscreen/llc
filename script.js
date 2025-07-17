@@ -56,23 +56,34 @@ function showPage(pageId) {
     currentPage = pageId;
     updateNavigation();
 
+    history.pushState(null, '', `/${pageId}`);
+
     // Load page-specific data
-    if (pageId === 'home') {
+     if (pageId === 'home') {
       loadFeaturedItems();
+      closeMobileMenu();
     } else if (pageId === 'acting') {
       loadCategoryItems('acting');
       setupHeadshotCarousel();
-      window.scrollTo(0, 0);
+      closeMobileMenu();
     } else if (pageId === 'music') {
       loadCategoryItems('music');
+      closeMobileMenu();
     } else if (pageId === 'photography') {
       loadCategoryItems('photography');
+      closeMobileMenu();
     } else if (pageId === 'portfolio') {
       showPortfolioGalleries();
+      closeMobileMenu();
     }
   }
   window.scrollTo(0, 0);
 }
+
+window.addEventListener('popstate', function () {
+  const path = window.location.pathname.replace('/', '') || 'home';
+  showPage(path);
+});
 
 // Update navigation active states
 function updateNavigation() {
