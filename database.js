@@ -1,36 +1,3 @@
-const theaterGallery = [
-  'img/acting/tgallery/koda2.JPEG',
-  'img/acting/tgallery/koda3.JPEG',
-  'img/acting/tgallery/koda4.JPEG',
-  'img/acting/tgallery/koda5.JPEG',
-  'img/acting/tgallery/maine1.JPG',
-  'img/acting/tgallery/msbap1.JPEG',
-  'img/acting/tgallery/msbap2.JPEG',
-  'img/acting/tgallery/tos1.jpg', 
-  'img/acting/tgallery/tos2.jpg',
-  'img/acting/tgallery/tos3.jpg'
-];
-
-const filmGallery = [
-  'img/acting/fgallery/home1.PNG',
-  'img/acting/fgallery/news.JPEG',
-  'img/acting/fgallery/virgin1.JPG',
-  'img/acting/fgallery/yarn1.JPEG',
-  'img/acting/fgallery/yarn2.jpg'
-];
-
-const otherGallery = [
-  'img/acting/pgallery/pw1.JPG',
-  'img/acting/pgallery/pw2.JPG',
-  'img/acting/pgallery/pw3.JPG',
-  'img/acting/pgallery/pw4.JPG',
-  'img/acting/pgallery/pw5.JPG',
-  'img/acting/pgallery/pw6.JPG',
-  'img/acting/pgallery/pw7.JPG',
-  'img/acting/pgallery/pw8.JPG',
-  'img/acting/pgallery/pw9.JPG'
-];
-
 let portfolioData = {
   acting: [
     {
@@ -217,7 +184,7 @@ let portfolioData = {
       id: 19,
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
-      imageUrl: "img/acting/pgallery/pw1.JPG",
+      imageUrl: "img/acting/pGallery/pw1.JPG",
       category: "performance",
       subcategory: "acting",
       year: 2025,
@@ -227,7 +194,7 @@ let portfolioData = {
       id: 20,
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
-      imageUrl: "img/acting/pgallery/pw2.JPG",
+      imageUrl: "img/acting/pGallery/pw2.JPG",
       category: "performance",
       subcategory: "acting",
       year: 2025,
@@ -237,7 +204,7 @@ let portfolioData = {
       id: 21,
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
-      imageUrl: "img/acting/pgallery/pw3.JPG",
+      imageUrl: "img/acting/pGallery/pw3.JPG",
       category: "performance",
       subcategory: "acting",
       year: 2025,
@@ -247,7 +214,7 @@ let portfolioData = {
       id: 22,
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
-      imageUrl: "img/acting/pgallery/pw4.JPG",
+      imageUrl: "img/acting/pGallery/pw4.JPG",
       category: "performance",
       subcategory: "acting",
       year: 2025,
@@ -257,7 +224,7 @@ let portfolioData = {
       id: 23,
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
-      imageUrl: "img/acting/pgallery/pw5.JPG",
+      imageUrl: "img/acting/pGallery/pw5.JPG",
       category: "performance",
       subcategory: "acting",
       year: 2025,
@@ -267,7 +234,7 @@ let portfolioData = {
       id: 24,
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
-      imageUrl: "img/acting/pgallery/pw6.JPG",
+      imageUrl: "img/acting/pGallery/pw6.JPG",
       category: "performance",
       subcategory: "acting",
       year: 2025,
@@ -277,7 +244,7 @@ let portfolioData = {
       id: 25,
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
-      imageUrl: "img/acting/pgallery/pw7.JPG",
+      imageUrl: "img/acting/pGallery/pw7.JPG",
       category: "performance",
       subcategory: "acting",
       year: 2025,
@@ -288,7 +255,7 @@ let portfolioData = {
       id: 26,
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
-      imageUrl: "img/acting/pgallery/pw8.JPG",
+      imageUrl: "img/acting/pGallery/pw8.JPG",
       category: "performance",
       subcategory: "acting",
       year: 2025,
@@ -298,7 +265,7 @@ let portfolioData = {
       id: 27,
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
-      imageUrl: "img/acting/pgallery/pw9.JPG",
+      imageUrl: "img/acting/pGallery/pw9.JPG",
       category: "performance",
       subcategory: "acting",
       year: 2025,
