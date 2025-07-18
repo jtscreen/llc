@@ -1278,10 +1278,6 @@ p {
 }
 
 @media (min-width: 768px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .nav-desktop {
     display: flex;
   }
@@ -1303,6 +1299,12 @@ p {
 @media (max-width: 768px) {
     .news-image .display {
     margin: auto;
+  }
+}
+
+@media (min-width: 820px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
