@@ -1,1398 +1,1047 @@
-/* Reset and base styles */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  /* Color palette */
-  --dark-blue: #293241;
-  --light-blue: #e0fbfc;
-  --orange: #ee6c4d;
-  --medium-blue: #3d5a80;
-  --white: #ffffff;
-  --black: #000000;
-  --overlay-black: rgba(0, 0, 0, 0.9);
-
-  /* Typography */
-  --font-display: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
-
-  /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
-  --spacing-3xl: 6rem;
-
-  /* Breakpoints */
-  --mobile: 640px;
-  --tablet: 768px;
-  --desktop: 1024px;
-  --large: 1280px;
-}
-
-body {
-  font-family: var(--font-body);
-  line-height: 1.6;
-  color: var(--dark-blue);
-  background-color: var(--light-blue);
-  overflow-x: hidden;
-}
-
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--dark-blue);
-}
-
-p {
-  margin-bottom: var(--spacing-sm);
-}
-
-/* Layout */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-sm);
-}
-
-.container.large {
-  max-width: 1400px;
-}
-
-.main-content {
-  padding-top: 4rem;
-}
-
-/* Navigation */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-sm);
-}
-
-.nav-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: fit-content;
-}
-
-.nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.logo-link {
-  text-decoration: none;
-  color: var(--dark-blue);
-  transition: color 0.2s ease;
-}
-
-.logo-link:hover {
-  color: var(--orange);
-}
-
-.logo{
-  width: 5rem;
-  height: auto;
-  display: inline-block;
-  margin: 0.5rem 0 0 0.5rem;
-  transition: transform 0.2s ease;
-}
-
-.logo:hover {
-  transform: scale(1.05);
-}
-
-.nav-desktop {
-  display: none;
-  gap: var(--spacing-lg);
-}
-
-.nav-link {
-  text-decoration: none;
-  color: var(--medium-blue);
-  font-weight: 500;
-  transition: color 0.2s ease;
-  position: relative;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--orange);
-}
-
-.nav-mobile-btn {
-  display: block;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--dark-blue);
-}
-
-.nav-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.nav-mobile {
-  display: none;
-  background-color: var(--white);
-  border-top: 1px solid var(--light-blue);
-}
-
-.nav-mobile.active {
-  display: block;
-}
-
-.nav-mobile-content {
-  padding: var(--spacing-sm);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-}
-
-.nav-mobile-link {
-  text-decoration: none;
-  color: var(--medium-blue);
-  font-weight: 500;
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: 0.5rem;
-  transition: all 0.2s ease;
-}
-
-.nav-mobile-link:hover,
-.nav-mobile-link.active {
-  color: var(--orange);
-  background-color: var(--light-blue);
-}
-
-/* Pages */
-.page {
-  display: none;
-}
-
-.page.active {
-  display: block;
-}
-
-/* Hero Section */
-.hero {
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-
-  background-image: url('img/logo/coverPhoto.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.hero-content {
-  min-height: 95vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  z-index: 10;
-  text-align: center;
-  color: var(--white);
-  padding: var(--spacing-sm);
-}
-
-.hero-title {
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
-  text-shadow: 2px 2px 4px var(--black);
-  color: #e0fbfc;
-}
-
-.hero-subtitle {
-  font-size: clamp(1.25rem, 4vw, 2rem);
-  font-weight: 300;
-  margin-bottom: var(--spacing-xl);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-  justify-content: center;
-  align-items: center;
-}
-
-/* Buttons */
-.btn {
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border-radius: 0.5rem;
-  font-weight: 500;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  transition: all 0.2s ease;
-  font-size: 1rem;
-}
-
-.btn-primary {
-  background-color: var(--orange);
-  color: var(--white);
-}
-
-.btn-primary:hover {
-  background-color: rgba(238, 108, 77, 0.9);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
-}
-
-.btn-secondary:hover {
-  background-color: var(--white);
-  color: var(--dark-blue);
-}
-
-/* Sections */
-.about,
-.portfolio,
-.bio,
-.recent-work,
-.services,
-.contact,
-.booking{
-  padding: var(--spacing-3xl) 0;
-}
-
-.about {
-  background-color: var(--white);
-}
-
-.portfolio {
-  background-color: var(--white);
-}
-
-.bio {
-  background-color: var(--white);
-}
-
-.recent-work {
-  background-color: var(--light-blue);
-}
-
-.services {
-  background-color: var(--white);
-}
-
-.featured-work {
-  background-color: var(--light-blue);
-}
-
-.section-title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: var(--spacing-2xl);
-  color: var(--dark-blue);
-}
-.section-subtitle{
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: var(--spacing-2xl);
-  color: var(--orange);
-}
-
-#sub-description {
-  font-size: 1.5rem;
-  color: var(--medium-blue);
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
-}
-
-#acting .section-title{
-    margin-bottom: 2vh;
-}
-
-/* About Section */
-.about-header {
-  text-align: center;
-  margin-bottom: var(--spacing-2xl);
-}
-
-.about-description {
-  font-size: 1.25rem;
-  color: var(--medium-blue);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.disciplines {
-  display: grid;
-  gap: var(--spacing-xl);
-  text-align: center;
-}
-
-.discipline {
-  padding: var(--spacing-lg);
-}
-
-.discipline-icon {
-  width: 5rem;
-  height: 5rem;
-  background-color: var(--orange);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--spacing-md);
-  transition: transform 0.2s ease;
-}
-
-.discipline:hover .discipline-icon {
-  transform: scale(1.1);
-}
-
-.discipline-icon .icon {
-  width: 2rem;
-  height: 2rem;
-  color: var(--dark-blue);
-}
-
-.discipline-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-}
-
-.discipline-description {
-  color: var(--medium-blue);
-}
-
-/* Bio Section */
-.bio-content {
-  display: grid;
-  gap: var(--spacing-xl);
-  align-items: center;
-}
-
-.bio-image {
-  position: relative;
-  width: 100%;
-  max-width: 350px;
-  margin: 0 auto;
-  display: block;
-  min-width: 200px;
-}
-
-.bio-image img.bio-headshot {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.5s ease;
-  position: relative; /* default, not absolute */
-  z-index: 1;
-}
-
-.bio-image img#bio-headshot-next {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.bio-headshot {
-  display: block;
-}
-
-.bio-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
-}
-
-.bio-description {
-  color: var(--medium-blue);
-  margin-bottom: var(--spacing-md);
-}
-#photography .bio{
-    background-color: var(--light-blue);
-}
-
-.fade-in { opacity: 1; }
-.fade-out { opacity: 0; }
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  margin-bottom: var(--spacing-md);
-}
-
-.skill {
-  background-color: var(--orange);
-  color: var(--dark-blue);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: 2rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-/* Portfolio Grid */
-.portfolio-grid {
-  display: grid;
-  gap: var(--spacing-xl);
-  grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
-}
-
-.portfolio-item {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover {
-  transform: translateY(-5px);
-}
-
-.portfolio-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  aspect-ratio: 4/3;
-}
-
-.portfolio-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-image img {
-  transform: scale(1.05);
-}
-
-.portfolio-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(41, 50, 65, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-overlay {
-  background-color: rgba(41, 50, 65, 0.1);
-}
-
-.portfolio-info {
-  padding: var(--spacing-sm) 0;
-}
-
-.portfolio-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.portfolio-description {
-  color: var(--medium-blue);
-}
-
-.reel{
-    position: relative;
-    overflow: hidden;
-    width: 80vw;
-    margin:  0 auto;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-}
-
-.responsive-iframe{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.5rem;
-}
-
-.download{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 5vh;
-}
-
-.download-container {
-    display: flex;
-    flex-direction: row;
-}
-
-.download-material{
-  position: relative;
-  display: inline-block;
-  width: 25vw;
-  height: 25vw;
-  margin: 3vh 5vw;
-  border-radius: 50%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-.download-material:hover {
-    transform: scale(1.05);
-}
-.download-material img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  display: block;
-  object-fit: cover;
-}
-
-/* Text overlay */
-.download-label {
-  font-family: var(--font-body);
-  font-size: 1.25rem;
-  color: var(--black);
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
-
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.3em 1em;
-  border-radius: 4px;
-  pointer-events: none;
-  white-space: nowrap;  
-}
-
-/* Featured Grid */
-.featured-grid {
-  display: grid;
-  gap: var(--spacing-xl);
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.featured-item {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.featured-item:hover {
-  transform: translateY(-5px);
-}
-
-.featured-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  aspect-ratio: 4/3;
-  margin-bottom: var(--spacing-md);
-}
-
-.featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.featured-item:hover .featured-image img {
-  transform: scale(1.05);
-}
-
-.featured-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(41, 50, 65, 0.3);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.featured-item:hover .featured-overlay {
-  background-color: rgba(41, 50, 65, 0.2);
-}
-
-.featured-overlay-text {
-  font-family: var(--font-display);
-  color: var(--white);
-  font-size: 1.5rem;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.featured-item:hover .featured-overlay-text {
-  opacity: 1;
-}
-
-.featured-category {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.featured-description {
-  color: var(--medium-blue);
-}
-
-/* Masonry Grid */
-.masonry-grid {
-  columns: 1;
-  column-gap: var(--spacing-lg);
-}
-
-.masonry-item {
-  break-inside: avoid;
-  margin-bottom: var(--spacing-lg);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.masonry-item:hover {
-  transform: translateY(-5px);
-}
-
-.masonry-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
-}
-
-.masonry-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.masonry-item:hover .masonry-image img {
-  transform: scale(1.05);
-}
-
-.masonry-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(41, 50, 65, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.masonry-item:hover .masonry-overlay {
-  background-color: rgba(41, 50, 65, 0.1);
-}
-
-.masonry-info {
-  padding: var(--spacing-sm) 0;
-}
-
-.masonry-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.masonry-description {
-  color: var(--medium-blue);
-  font-size: 0.875rem;
-}
-
-/* Timeline */
-.timeline {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.timeline-item {
-  border-left: 4px solid var(--orange);
-  padding-left: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
-}
-
-.timeline-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.timeline-role {
-  color: var(--medium-blue);
-  margin-bottom: var(--spacing-xs);
-}
-
-.timeline-year {
-  color: var(--medium-blue);
-  font-size: 0.875rem;
-}
-
-/* Releases */
-.releases {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.release {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md);
-  background-color: var(--light-blue);
-  border-radius: 0.5rem;
-}
-
-.release-icon {
-  width: 4rem;
-  height: 4rem;
-  background-color: var(--orange);
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.release-icon .icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--dark-blue);
-}
-
-.release-info {
-  flex: 1;
-}
-
-.release-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.release-genre {
-  color: var(--medium-blue);
-}
-
-.release-duration {
-  color: var(--medium-blue);
-  font-size: 0.875rem;
-}
-
-/* Services */
-.services-grid {
-  display: grid;
-  gap: var(--spacing-xl);
-  text-align: center;
-}
-
-.service {
-  padding: var(--spacing-lg);
-}
-
-.service-icon {
-  width: 4rem;
-  height: 4rem;
-  background-color: var(--orange);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--spacing-md);
-}
-
-.service-icon .icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: var(--dark-blue);
-}
-
-.service-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-}
-
-.service-description {
-  color: var(--medium-blue);
-}
-
-
-/* News & Updates Section */
-.upcoming {
-  background-color: var(--light-blue);
-  padding: var(--spacing-3xl) 0;
-}
-
-.upcoming-subtitle {
-  font-size: 1.5rem;
-  color: var(--medium-blue);
-  text-align: center;
-  margin-bottom: var(--spacing-2xl);
-  font-style: italic;
-}
-
-#upcoming .section-title {
-  margin-bottom: var(--spacing-xs);
-}
-
-.news {
-  display: grid;
-  gap: var(--spacing-xl);
-  align-items: start;
-  margin-bottom: var(--spacing-3xl);
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-}
-
-.news-item {
-  background-color: var(--white);
-  padding: var(--spacing-lg);
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.news-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-sm);
-  color: var(--dark-blue);
-}
-
-.news-description {
-  color: var(--medium-blue);
-  line-height: 1.6;
-}
-
-.news-description a {
-  color: var(--orange);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.news-description a:hover {
-  text-decoration: underline;
-}
-
-.news-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.news-image .display {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  margin: 25% auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.subscribe {
-  background-color: var(--white);
-  padding: var(--spacing-2xl);
-  border-radius: 0.5rem;
-  text-align: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.subscribe-title {
-  font-size: 1.25rem;
-  color: var(--medium-blue);
-  margin-bottom: var(--spacing-xl);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.subscription-form-container {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.subscription-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.subscription-form input[type="email"] {
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: 2px solid var(--light-blue);
-  border-radius: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  background-color: var(--white);
-  color: var(--dark-blue);
-  transition: border-color 0.2s ease;
-  text-align: center;
-}
-
-.subscription-form input[type="email"]:focus {
-  outline: none;
-  border-color: var(--orange);
-}
-
-.subscription-form input[type="email"]::placeholder {
-  color: var(--medium-blue);
-}
-
-/* Contact Form */
-.contact {
-  background-color: var(--white);
-}
-
-.contact-description {
-  font-size: 1.25rem;
-  color: var(--medium-blue);
-  max-width: 800px;
-  margin: 0 auto var(--spacing-xl);
-  text-align: center;
-}
-
-.contact-subdescription {
-  font-size: 1rem;
-  color: var(--orange);
-  text-align: center;
-  margin-bottom: var(--spacing-lg);
-}
-
-.contact-form-container {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: 2px solid var(--light-blue);
-  border-radius: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  background-color: var(--white);
-  color: var(--dark-blue);
-  transition: border-color 0.2s ease;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: var(--orange);
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: var(--medium-blue);
-}
-
-.contact-form select {
-  cursor: pointer;
-}
-
-.contact-form select option {
-  color: var(--dark-blue);
-}
-
-.contact-form textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-button {
-  display: flex;
-  justify-content: center;
-  margin-top: var(--spacing-md);
-}
-
-.contact-form .btn {
-  min-width: 200px;
-}
-
-/* Footer */
-.footer {
-  background-color: var(--dark-blue);
-  color: var(--white);
-  padding: var(--spacing-sm) 0;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.footer-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-md);
-}
-
-.footer-description {
-  color: #d1d5db;
-  margin-bottom: var(--spacing-md);
-}
-
-.footer-social {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-sm);
-}
-
-.social-link {
-  color: #d1d5db;
-  transition: color 0.2s ease;
-}
-
-.social-link:hover {
-  color: var(--orange);
-}
-
-.social-link .icon {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.footer-subtitle {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-md);
-}
-
-.footer-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-}
-
-.footer-link {
-  color: #d1d5db;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-link:hover {
-  color: var(--orange);
-}
-
-.footer-contact {
-  color: #d1d5db;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-}
-
-.footer-bottom {
-  border-top: 1px solid #374151;
-  padding-top: var(--spacing-lg);
-  text-align: center;
-  color: #9ca3af;
-}
-
-/* Loading States */
-.loading-grid {
-  display: grid;
-  gap: var(--spacing-xl);
-}
-
-.loading-item {
-  animation: pulse 2s infinite;
-}
-
-.loading-image {
-  background-color: #d1d5db;
-  border-radius: 0.5rem;
-  aspect-ratio: 4/3;
-  margin-bottom: var(--spacing-sm);
-}
-
-.loading-image.tall {
-  aspect-ratio: 3/4;
-}
-
-.loading-text {
-  height: 1.5rem;
-  background-color: #d1d5db;
-  border-radius: 0.25rem;
-  margin-bottom: var(--spacing-xs);
-}
-
-.loading-text.small {
-  height: 1rem;
-  width: 75%;
-}
-
-.loading-video {
-  background-color: #d1d5db;
-  border-radius: 0.5rem;
-  aspect-ratio: 16/9;
-  margin-bottom: var(--spacing-sm);
-}
-
-.loading-download {
-  background-color: #d1d5db;
-  border-radius: 50%;
-  aspect-ratio: 1/1;
-  width: 25vw;
-  height: 25vw;
-  margin: 3vh 5vw;
-}
-
-.iframe-loading {
-  display: block;
-}
-
-.download-loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 5vh;
-}
-
-.download-loading .download-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.masonry-loading {
-  columns: 1;
-  column-gap: var(--spacing-lg);
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-
-/* Responsive Design */
-@media (min-width: 640px) {
-  .hero-buttons {
-    flex-direction: row;
-  }
-
-  .disciplines {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .featured-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .footer-content {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .loading-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .masonry-grid {
-    columns: 2;
-  }
-
-  .masonry-loading {
-    columns: 2;
-  }
-
-  .subscription-form {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .subscription-form input[type="email"] {
-    flex: 1;
-    text-align: left;
-  }
-
-  .subscription-form .form-button {
-    margin-top: 0;
-    margin-left: var(--spacing-sm);
-  }
-}
-
-@media (max-width: 600px) {
-  .hero{
-    background-image: url('img/logo/mobileCoverPhoto.jpg');
-  }
-  .portfolio-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
-  .nav-desktop {
-    display: flex;
-  }
-
-  .nav-mobile-btn {
-    display: none;
-  }
-
-  .bio-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .news {
-    grid-template-columns: 1fr 400px;
-    gap: var(--spacing-2xl);
-  }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .news-image .display {
-    margin: auto;
-  }
-}
-
-@media (max-width: 820px) {
-  .download-headshot, .download-resume {
-    width: 40vw;
-    height: 40vw;
-    margin: 0 auto;
-  }
-  .download-headshot{
-    margin-bottom: 5vh;
-  }
-  .loading-download {
-    width: 40vw;
-    height: 40vw;
-    margin: 0 auto;
-  }
-  .download-loading .loading-item:first-child .loading-download {
-    margin-bottom: 5vh;
-  }
-}
-
-@media (min-width: 1024px) {
-  .masonry-grid {
-    columns: 3;
-  }
-
-  .masonry-loading {
-    columns: 3;
-  }
-
-  .loading-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1280px) {
-  .loading-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-.gallery-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  display: block;
-}
-
-/* Lightbox */
-.lightbox-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.9);
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.lightbox-modal[style*="display: flex"] {
-  display: flex !important;
-}
-.lightbox-img {
-  max-width: 90vw;
-  max-height: 80vh;
-  border-radius: 0.5rem;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-}
-.lightbox-close, .lightbox-prev, .lightbox-next {
-  position: absolute;
-  color: #fff;
-  font-size: 2.5rem;
-  cursor: pointer;
-  user-select: none;
-  z-index: 10000;
-}
-.lightbox-close { top: 2rem; right: 2rem; }
-.lightbox-prev { left: 2rem; top: 50%; transform: translateY(-50%); }
-.lightbox-next { right: 2rem; top: 50%; transform: translateY(-50%); }
+let portfolioData = {
+  acting: [
+    {
+      id: 1,
+      title: "[Title of Show]",
+      description: "Lead Role - Hunter",
+      imageUrl: "img/acting/tgallery/tos2.jpg",
+      category: "theater",
+      subcategory: "acting",
+      year: 2024,
+      featured: true
+    },
+    {
+      id: 2,
+      title: "[Title of Show]",
+      description: "Lead - Hunter",
+      imageUrl: "img/acting/tgallery/tos3.jpg",
+      category: "theater",
+      subcategory: "acting",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 3,
+      title: "[Title of Show]",
+      description: "Lead - Hunter",
+      imageUrl: "img/acting/tgallery/tos1.jpg",
+      category: "theater",
+      subcategory: "acting",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 4,
+      title: "My Sweetest Baby Angel Princess",
+      description: "Supporting - Chris",
+      imageUrl: "img/acting/tgallery/msbap1.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2023,
+      featured: false
+    },
+    {
+      id: 5,
+      title: "My Sweetest Baby Angel Princess",
+      description: "Supporting - Chris",
+      imageUrl: "img/acting/tgallery/msbap2.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2023,
+      featured: false
+    },
+    {
+      id: 6,
+      title: "Almost, Maine",
+      description: "Free Spirit Ensemble - Pete",
+      imageUrl: "img/acting/tgallery/maine1.JPG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2021,
+      featured: false
+    },
+    {
+      id: 7,
+      title: "Kodachrome",
+      description: "Supporting - Gravedigger/Young Man",
+      imageUrl: "img/acting/tgallery/koda.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 8,
+      title: "Kodachrome",
+      description: "Supporting - Gravedigger/Young Man",
+      imageUrl: "img/acting/tgallery/koda2.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 9,
+      title: "Kodachrome",
+      description: "Supporting - Gravedigger/Young Man",
+      imageUrl: "img/acting/tgallery/koda3.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 10,
+      title: "Kodachrome",
+      description: "Supporting - Gravedigger/Young Man",
+      imageUrl: "img/acting/tgallery/koda4.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 11,
+      title: "Indecent",
+      description: "Lead - Lemml",
+      imageUrl: "img/acting/tgallery/indecent1.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2022,
+      featured: false
+    },
+    {
+      id: 12,
+      title: "Indecent",
+      description: "Lead - Lemml",
+      imageUrl: "img/acting/tgallery/indecent2.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2022,
+      featured: false
+    },
+    {
+      id: 13,
+      title: "Indecent",
+      description: "Lead - Lemml",
+      imageUrl: "img/acting/tgallery/indecent3.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2022,
+      featured: false
+    },
+    {
+      id: 14,
+      title: "Indecent",
+      description: "Lead - Lemml",
+      imageUrl: "img/acting/tgallery/indecent4.JPEG",
+      category: "theater",
+      subcategory: "acting",
+      year: 2022,
+      featured: false
+    },
+    {
+      id: 15,
+      title: "No Place is Home",
+      description: "Day Player - Ryder",
+      imageUrl: "img/acting/fgallery/home1.PNG",
+      category: "film",
+      subcategory: "acting",
+      year: 2023,
+      featured: false
+    },
+    {
+      id: 16,
+      title: "A Yarn",
+      description: "Supporting - Rob",
+      imageUrl: "img/acting/fgallery/yarn1.JPEG",
+      category: "film",
+      subcategory: "acting",
+      year: 2023,
+      featured: false
+    },
+    {
+      id: 17,
+      title: "A Yarn",
+      description: "Supporting - Rob",
+      imageUrl: "img/acting/fgallery/yarn2.jpg",
+      category: "film",
+      subcategory: "acting",
+      year: 2023,
+      featured: true
+    },
+    {
+      id: 18,
+      title: "21-Year-Old Virgin",
+      description: "Day Player - Prince Charming",
+      imageUrl: "img/acting/fgallery/virgin1.JPG",
+      category: "film",
+      subcategory: "acting",
+      year: 2023,
+      featured: false
+    },
+    {
+      id: 19,
+      title: "Paradise Wind",
+      description: "Movement Piece - Performer",
+      imageUrl: "img/acting/pGallery/pw1.JPG",
+      category: "performance",
+      subcategory: "acting",
+      year: 2025,
+      featured: true
+    },
+    {
+      id: 20,
+      title: "Paradise Wind",
+      description: "Movement Piece - Performer",
+      imageUrl: "img/acting/pGallery/pw2.JPG",
+      category: "performance",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 21,
+      title: "Paradise Wind",
+      description: "Movement Piece - Performer",
+      imageUrl: "img/acting/pGallery/pw3.JPG",
+      category: "performance",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 22,
+      title: "Paradise Wind",
+      description: "Movement Piece - Performer",
+      imageUrl: "img/acting/pGallery/pw4.JPG",
+      category: "performance",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 23,
+      title: "Paradise Wind",
+      description: "Movement Piece - Performer",
+      imageUrl: "img/acting/pGallery/pw5.JPG",
+      category: "performance",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 24,
+      title: "Paradise Wind",
+      description: "Movement Piece - Performer",
+      imageUrl: "img/acting/pGallery/pw6.JPG",
+      category: "performance",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 25,
+      title: "Paradise Wind",
+      description: "Movement Piece - Performer",
+      imageUrl: "img/acting/pGallery/pw7.JPG",
+      category: "performance",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    }
+    ,
+    {
+      id: 26,
+      title: "Paradise Wind",
+      description: "Movement Piece - Performer",
+      imageUrl: "img/acting/pGallery/pw8.JPG",
+      category: "performance",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 27,
+      title: "Paradise Wind",
+      description: "Movement Piece - Performer",
+      imageUrl: "img/acting/pGallery/pw9.JPG",
+      category: "performance",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    }
+  ],
+  music: [
+    {
+      id: 1,
+      title: "Nocturne in E Minor",
+      description: "Solo Piano - Premiered at Carnegie Hall",
+      imageUrl: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600",
+      category: "music",
+      year: 2024,
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Symphony No. 1",
+      description: "Full Orchestra - New York Philharmonic",
+      imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600",
+      category: "music",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 3,
+      title: "Acoustic Sessions",
+      description: "Original Songs - Blue Note Records",
+      imageUrl: "https://images.unsplash.com/photo-1598387993441-a364f854c3e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600",
+      category: "music",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 4,
+      title: "Electronic Fusion",
+      description: "Contemporary Album - Modern Sounds",
+      imageUrl: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600",
+      category: "music",
+      year: 2024,
+      featured: false
+    }
+  ],
+  photography: [
+    {
+      id: 1,
+      title: "Arden(1)",
+      description: "Arden Cathers Headshot",
+      imageUrl: "img/photo/headshot-gallery/arden1.jpg",
+      category: "headshot",
+      subcategory: "photography",
+      year: 2023,
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Arden(2)",
+      description: "Arden Cathers Headshot",
+      imageUrl: "img/photo/headshot-gallery/arden2.jpg",
+      category: "headshot",
+      subcategory: "photography",
+      year: 2023,
+      featured: false
+    },
+    {
+      id: 3,
+      title: "Bridget(1)",
+      description: "Bridget Barnes Headshot",
+      imageUrl: "img/photo/headshot-gallery/bridget1.JPG",
+      category: "headshot",
+      subcategory: "photography",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 4,
+      title: "Kat(1)",
+      description: "Kat Foseman Headshot",
+      imageUrl: "img/photo/headshot-gallery/kat1.JPG",
+      category: "headshot",
+      subcategory: "photography",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 5,
+      title: "kat(2)",
+      description: "Kat Foseman Headshot",
+      imageUrl: "img/photo/headshot-gallery/kat2.jpg",
+      category: "headshot",
+      subcategory: "photography",
+      year: 2025,
+      featured: false
+    },
+    {
+      id: 6,
+      title: "Laurel(1)",
+      description: "Laurel Moore Headshot",
+      imageUrl: "img/photo/headshot-gallery/Laurel2.jpg",
+      category: "headshot",
+      subcategory: "photography",
+      year: 2023,
+      featured: false
+    },
+    {
+      id: 7,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists1.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 8,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists2.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 9,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists3.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 10,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists4.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 11,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists5.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 12,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists6.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      id: 13,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists7.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      id: 14,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists8.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      id: 15,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists9.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      id: 16,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists10.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      id: 17,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists11.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      id: 18,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists12.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      id: 19,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists13.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      id: 20,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists14.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      id: 21,
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists15.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 22,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell1.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: true
+    },
+    {
+      id: 23,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell2.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 24,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell3.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 25,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell4.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 26,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell5.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 27,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell6.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 28,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell7.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 29,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell8.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 30,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell9.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 31,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell10.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 32,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell11.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 33,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell12.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 34,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell13.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 35,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell14.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 36,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell15.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 37,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell16.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 38,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell17.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 39,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell18.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 40,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell19.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 41,
+      title: "Godspell",
+      description: "Fordham Theater Production",
+      imageUrl: "img/photo/production-gallery/godspell/godspell20.JPG",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 42,
+      title: "Ara(1)",
+      description: "Ara Tandon Graduation photo",
+      imageUrl: "img/photo/grad-gallery/Ara1.JPG",
+      category: "graduation",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 43,
+      title: "Ara(2)",
+      description: "Ara Tandon Graduation photo",
+      imageUrl: "img/photo/grad-gallery/Ara2.JPG",
+      category: "graduation",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 44,
+      title: "Ara(3)",
+      description: "Ara Tandon Graduation photo",
+      imageUrl: "img/photo/grad-gallery/Ara5.JPG",
+      category: "graduation",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 45,
+      title: "Gill(1)",
+      description: "Gillian Gural Graduation photo",
+      imageUrl: "img/photo/grad-gallery/Gill4.JPG",
+      category: "graduation",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 46,
+      title: "Gill(2)",
+      description: "Gillian Gural Graduation photo",
+      imageUrl: "img/photo/grad-gallery/Gill7.JPG",
+      category: "graduation",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 47,
+      title: "Gill(3)",
+      description: "Gillian Gural Graduation photo",
+      imageUrl: "img/photo/grad-gallery/Gill9.JPG",
+      category: "graduation",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 48,
+      title: "kana(2)",
+      description: "Kana Seiki Graduation photo",
+      imageUrl: "img/photo/grad-gallery/kana10.JPG",
+      category: "graduation",
+      subcategory: "photography",
+      year: 2024,
+      featured: true
+    },
+    {
+      id: 49,
+      title: "kana(1)",
+      description: "Kana Seiki Graduation photo",
+      imageUrl: "img/photo/grad-gallery/kana8.JPG",
+      category: "graduation",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+{
+      id: 50,
+      title: "Anella(1)",
+      description: "Anella photo shoot",
+      imageUrl: "img/photo/portrait-gallery/anella1.JPG",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 51,
+      title: "Anella(2)",
+      description: "Anella photo shoot",
+      imageUrl: "img/photo/portriat-gallery/anella2.jpg",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 52,
+      title: "Bloodshot(1)",
+      description: "Laurel Moore photo shoot",
+      imageUrl: "img/photo/portrait-gallery/Bloodshot2.jpg",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2023,
+      featured: false
+    },
+    {
+      id: 53,
+      title: "Bloodshot(2)",
+      description: "Laurel Moore photo shoot",
+      imageUrl: "img/photo/portrait-gallery/Bloodshot3.jpg",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2023,
+      featured: false
+    },
+    {
+      id: 54,
+      title: "Julie(1)",
+      description: "Julie Casamonti photo shoot",
+      imageUrl: "img/photo/portrait-gallery/ghost1.jpg",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: true
+    },
+    {
+      id: 55,
+      title: "Julie(2)",
+      description: "Julie Casamonti photo shoot",
+      imageUrl: "img/photo/portrait-gallery/julie1.jpg",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 56,
+      title: "Julie(3)",
+      description: "Julie Casamonti photo shoot",
+      imageUrl: "img/photo/portrait-gallery/julie2.jpg",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 57,
+      title: "Julie(4)",
+      description: "Julie Casamonti photo shoot",
+      imageUrl: "img/photo/portrait-gallery/julie4.jpg",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 58,
+      title: "Kana(1)",
+      description: "Kana Seiki photo shoot",
+      imageUrl: "img/photo/portrait-gallery/kana2.JPG",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 59,
+      title: "Kana(2)",
+      description: "Kana Seiki photo shoot",
+      imageUrl: "img/photo/portrait-gallery/kana5.JPG",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 60,
+      title: "Mock Trial(1)",
+      description: "Mock Trial portraits",
+      imageUrl: "img/photo/portrait-gallery/mock1.JPG",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 61,
+      title: "Mock Trial(2)",
+      description: "Mock Trial portraits",
+      imageUrl: "img/photo/portrait-gallery/mock2.JPG",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 62,
+      title: "Mock Shaddi(1)",
+      description: "Mock Shaddi event",
+      imageUrl: "img/photo/event-gallery/shaddi9.jpg",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 63,
+      title: "Mock Shaddi(2)",
+      description: "Mock Shaddi event",
+      imageUrl: "img/photo/event-gallery/shaddi13.jpg",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 64,
+      title: "Mock Shaddi(3)",
+      description: "Mock Shaddi event",
+      imageUrl: "img/photo/event-gallery/shaddi14.jpg",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 65,
+      title: "Mock Shaddi(4)",
+      description: "Mock Shaddi event",
+      imageUrl: "img/photo/event-gallery/shaddi16.jpg",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 66,
+      title: "Mock Shaddi(5)",
+      description: "Mock Shaddi event",
+      imageUrl: "img/photo/event-gallery/shaddi17.jpg",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: true
+    },
+    {
+      id: 67,
+      title: "Mock Shaddi(6)",
+      description: "Mock Shaddi event",
+      imageUrl: "img/photo/event-gallery/shaddi20.jpg",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 68,
+      title: "kana",
+      description: "Kana Seiki Photo",
+      imageUrl: "img/photo/event-gallery/kana3.JPG",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 69,
+      title: "India Beer(1)",
+      description: "India Beer Performance",
+      imageUrl: "img/photo/event-gallery/india1.JPG",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 70,
+      title: "India Beer(2)",
+      description: "India Beer Performance",
+      imageUrl: "img/photo/event-gallery/india2.JPG",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 71,
+      title: "India Beer(3)",
+      description: "India Beer Performance",
+      imageUrl: "img/photo/event-gallery/india3.JPG",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 72,
+      title: "India Beer(4)",
+      description: "India Beer Performance",
+      imageUrl: "img/photo/event-gallery/india4.JPG",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 73,
+      title: "India Beer(5)",
+      description: "India Beer Performance",
+      imageUrl: "img/photo/event-gallery/india5.JPG",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 74,
+      title: "India Beer(6)",
+      description: "India Beer Performance",
+      imageUrl: "img/photo/event-gallery/india6.JPG",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    }
+  ],
+  featured: []
+};
