@@ -774,6 +774,16 @@ let portfolioData = {
     },
     {
       id: 48,
+      title: "kana(1)",
+      description: "Kana Seiki Graduation photo",
+      imageUrl: "img/photo/grad-gallery/kana8.JPG",
+      category: "graduation",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      id: 49,
       title: "kana(2)",
       description: "Kana Seiki Graduation photo",
       imageUrl: "img/photo/grad-gallery/kana10.JPG",
@@ -783,7 +793,7 @@ let portfolioData = {
       featured: true
     },
     {
-      id: 49,
+      id: 50,
       title: "kana(1)",
       description: "Kana Seiki Graduation photo",
       imageUrl: "img/photo/grad-gallery/kana8.JPG",
@@ -792,8 +802,8 @@ let portfolioData = {
       year: 2024,
       featured: false
     },
-{
-      id: 50,
+    {
+      id: 51,
       title: "Anella(1)",
       description: "Anella photo shoot",
       imageUrl: "img/photo/portrait-gallery/anella1.JPG",
@@ -803,7 +813,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 51,
+      id: 52,
       title: "Anella(2)",
       description: "Anella photo shoot",
       imageUrl: "img/photo/portriat-gallery/anella2.jpg",
@@ -813,7 +823,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 52,
+      id: 53,
       title: "Bloodshot(1)",
       description: "Laurel Moore photo shoot",
       imageUrl: "img/photo/portrait-gallery/Bloodshot2.jpg",
@@ -823,7 +833,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 53,
+      id: 54,
       title: "Bloodshot(2)",
       description: "Laurel Moore photo shoot",
       imageUrl: "img/photo/portrait-gallery/Bloodshot3.jpg",
@@ -833,7 +843,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 54,
+      id: 55,
       title: "Julie(1)",
       description: "Julie Casamonti photo shoot",
       imageUrl: "img/photo/portrait-gallery/ghost1.jpg",
@@ -843,7 +853,7 @@ let portfolioData = {
       featured: true
     },
     {
-      id: 55,
+      id: 56,
       title: "Julie(2)",
       description: "Julie Casamonti photo shoot",
       imageUrl: "img/photo/portrait-gallery/julie1.jpg",
@@ -853,7 +863,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 56,
+      id: 57,
       title: "Julie(3)",
       description: "Julie Casamonti photo shoot",
       imageUrl: "img/photo/portrait-gallery/julie2.jpg",
@@ -863,7 +873,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 57,
+      id: 58,
       title: "Julie(4)",
       description: "Julie Casamonti photo shoot",
       imageUrl: "img/photo/portrait-gallery/julie4.jpg",
@@ -873,7 +883,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 58,
+      id: 59,
       title: "Kana(1)",
       description: "Kana Seiki photo shoot",
       imageUrl: "img/photo/portrait-gallery/kana2.JPG",
@@ -883,7 +893,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 59,
+      id: 60,
       title: "Kana(2)",
       description: "Kana Seiki photo shoot",
       imageUrl: "img/photo/portrait-gallery/kana5.JPG",
@@ -893,7 +903,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 60,
+      id: 61,
       title: "Mock Trial(1)",
       description: "Mock Trial portraits",
       imageUrl: "img/photo/portrait-gallery/mock1.JPG",
@@ -903,7 +913,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 61,
+      id: 62,
       title: "Mock Trial(2)",
       description: "Mock Trial portraits",
       imageUrl: "img/photo/portrait-gallery/mock2.JPG",
@@ -913,7 +923,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 62,
+      id: 63,
       title: "Mock Shaddi(1)",
       description: "Mock Shaddi event",
       imageUrl: "img/photo/event-gallery/shaddi9.jpg",
@@ -923,7 +933,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 63,
+      id: 64,
       title: "Mock Shaddi(2)",
       description: "Mock Shaddi event",
       imageUrl: "img/photo/event-gallery/shaddi13.jpg",
@@ -933,7 +943,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 64,
+      id: 65,
       title: "Mock Shaddi(3)",
       description: "Mock Shaddi event",
       imageUrl: "img/photo/event-gallery/shaddi14.jpg",
@@ -943,7 +953,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 65,
+      id: 66,
       title: "Mock Shaddi(4)",
       description: "Mock Shaddi event",
       imageUrl: "img/photo/event-gallery/shaddi16.jpg",
@@ -953,7 +963,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 66,
+      id: 67,
       title: "Mock Shaddi(5)",
       description: "Mock Shaddi event",
       imageUrl: "img/photo/event-gallery/shaddi17.jpg",
@@ -963,7 +973,7 @@ let portfolioData = {
       featured: true
     },
     {
-      id: 67,
+      id: 68,
       title: "Mock Shaddi(6)",
       description: "Mock Shaddi event",
       imageUrl: "img/photo/event-gallery/shaddi20.jpg",
@@ -973,7 +983,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 68,
+      id: 69,
       title: "kana",
       description: "Kana Seiki Photo",
       imageUrl: "img/photo/event-gallery/kana3.JPG",
@@ -983,7 +993,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 69,
+      id: 70,
       title: "India Beer(1)",
       description: "India Beer Performance",
       imageUrl: "img/photo/event-gallery/india1.JPG",
@@ -993,7 +1003,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 70,
+      id: 71,
       title: "India Beer(2)",
       description: "India Beer Performance",
       imageUrl: "img/photo/event-gallery/india2.JPG",
@@ -1003,7 +1013,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 71,
+      id: 72,
       title: "India Beer(3)",
       description: "India Beer Performance",
       imageUrl: "img/photo/event-gallery/india3.JPG",
@@ -1013,7 +1023,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 72,
+      id: 73,
       title: "India Beer(4)",
       description: "India Beer Performance",
       imageUrl: "img/photo/event-gallery/india4.JPG",
@@ -1023,7 +1033,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 73,
+      id: 74,
       title: "India Beer(5)",
       description: "India Beer Performance",
       imageUrl: "img/photo/event-gallery/india5.JPG",
@@ -1033,7 +1043,7 @@ let portfolioData = {
       featured: false
     },
     {
-      id: 74,
+      id: 75,
       title: "India Beer(6)",
       description: "India Beer Performance",
       imageUrl: "img/photo/event-gallery/india6.JPG",
