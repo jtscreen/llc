@@ -8,7 +8,19 @@ let currentPage = 'home';
 document.addEventListener('DOMContentLoaded', function() {
   lucide.createIcons();
 
-  showPage('home');
+  let initialPage = location.pathname.replace('/', '');
+  if (!initialPage || initialPage === '') {
+    initialPage = 'home';
+  }
+  
+  // Ensure the home page is visible by default if we're loading home
+  if (initialPage === 'home') {
+    const homePage = document.getElementById('home');
+    if (homePage) {
+      homePage.classList.add('active');
+    }
+  }  
+  showPage(initialPage);
   updateNavigation();
 });
 

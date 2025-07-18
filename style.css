@@ -1302,9 +1302,6 @@ p {
 }
 
 @media (max-width: 820px) {
-  .download-container {
-    flex-direction: column;
-  }
   .download-headshot, .download-resume {
     width: 40vw;
     height: 40vw;
@@ -1312,9 +1309,6 @@ p {
   }
   .download-headshot{
     margin-bottom: 5vh;
-  }
-  .download-loading .download-container {
-    flex-direction: column;
   }
   .loading-download {
     width: 40vw;
