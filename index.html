@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joshua Screen</title>
   <meta name="description" content="Official website of Joshua Screen — Actor, Music Artist, Photographer, and Creative.">
-  
+
   <!-- Open Graph tags -->
   <meta property="og:title" content="Joshua Screen - Multi-Disciplinary Artist">
   <meta property="og:description" content="Bringing stories to life through acting, music, and photography. Professional portfolio showcasing theatrical performances, musical compositions, and fine art photography.">
   <meta property="og:image" content="img/logo/coverPhoto.jpg">
   <meta property="og:url" content="https://jtscreen.com">
   <meta property="og:type" content="website">
-  
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="img/logo/favicon.ico">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
         <div class="nav-logo">
           <a href="#" onclick="navigateTo('home'); return false" class="logo-link"><img class="logo" src="img/logo/logo.png"></a>
         </div>
-        
+
         <!-- Desktop Navigation -->
         <div class="nav-desktop">
           <a href="#" onclick="navigateTo('home'); return false" class="nav-link" data-page="home">Home</a>
@@ -39,14 +39,14 @@
           <a href="/photography" onclick="navigateTo('photography'); return false" class="nav-link" data-page="photography">Photography</a>
           <a href="/contact" onclick="navigateTo('contact'); return false" class="nav-link" data-page="contact">Contact</a>
         </div>
-        
+
         <!-- Mobile Navigation Button -->
         <button class="nav-mobile-btn" onclick="toggleMobileMenu()">
           <i data-lucide="menu" class="nav-icon"></i>
         </button>
       </div>
     </div>
-    
+
     <!-- Mobile Navigation -->
     <div class="nav-mobile" id="mobileNav">
       <div class="nav-mobile-content">
@@ -87,7 +87,7 @@
                 Art is my passion—creating it, sharing it, and helping others bring their artistic visions to life. While I won’t list every skill in this bio (I’ve curated more detailed profiles on my subpages for specific fields), here’s a quick overview of the areas where I can help make your ideas a reality:
             </p>
           </div>
-          
+
           <div class="disciplines">
             <div class="discipline">
               <a href="/acting" onclick="navigateTo('acting'); return false" class="nav-link" data-page="acting">
@@ -100,7 +100,7 @@
                 Television and film, theatre, voice acting, video host
               </p>
             </div>
-            
+
             <div class="discipline">
               <a href="/music" onclick="navigateTo('music'); return false" class="nav-link" data-page="music">
                 <div class="discipline-icon">
@@ -124,7 +124,50 @@
                 Headshots, performance productions, portraits, events
               </p>
             </div>
-            
+          </div>
+        </div>
+      </section>
+
+      <!-- News & Updates Section -->
+      <section id="upcoming" class="upcoming">
+        <div class="container">
+          <h2 class="section-title">News & Updates</h2>
+          <p class="upcoming-subtitle">Be on the look out!</p>
+
+          <div class="news">
+            <div class="content">
+              <div class="news-item">
+                <h3 class="news-title">JTSCREEN LLC is Official!</h3>
+                <p class="news-description">As of 2025, JTSCREEN LLC is officially established! This marks the beginning of many things to come with Joshua Screen.</p>
+              </div>
+
+              <div class="news-item">
+                <h3 class="news-title">Now Filming: A Yarn</h3>
+                <p class="news-description">JTSCREEN LLC is proud to be part of the feature film A Yarn, written and directed by Cait Brown. Production is currently underway, and we can't wait to share more soon. Visit the official <a href="https://www.ayarnfilm.com/" target="_blank">A Yarn website</a> for the latest updates.</p>
+              </div>
+
+              <div class="news-item">
+                <h3 class="news-title">Premiere of Westhampton at the Tribeca Film Festival</h3>
+                <p class="news-description">Joshua Screen will be attending the Tribeca Film Festival to see the premiere of Westhampton, directed by Christian Nillson, a feature film he is in starring RJ Mitte, Ritchie Coster, and Luke Slattery.</p>
+              </div>
+            </div>
+            <div class="news-image">
+              <img class="display" src="img/acting/fgallery/news.JPEG" alt="News and updates">
+            </div>
+          </div>
+
+          <div class="subscribe">
+            <h3 class="subscribe-title">Be the first to know! Stay tuned for exclusive updates, behind-the-scenes content, and early access to our latest projects as we continue to grow and create. Join our mailing list today!</h3>
+            <div class="subscription-form-container">
+              <form action="https://api.web3forms.com/submit" method="POST" class="subscription-form">
+                <input type="hidden" name="access_key" value="83d56d93-5eb7-4887-8f19-179a1c6a9478">        
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                <div class="form-button">
+                  <button type="submit" class="btn btn-primary">Sign Up</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </section>
@@ -191,7 +234,7 @@
       <section class="portfolio">
         <div class="container">
           <h2 class="section-title">Portfolio</h2>
-          
+
           <div class="portfolio-loading" id="actingLoading">
             <div class="loading-grid">
               <div class="loading-item">
@@ -211,7 +254,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="portfolio-grid" id="actingGrid">
             <!-- Acting items will be loaded here -->
           </div>
@@ -249,14 +292,14 @@
               </div>
             </div>
             <div class="bio-image">
-              <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=800" alt="Musician at piano in professional recording studio">
+              <img src="img/home/musicPortrait.jpg" class="bio-headshot" alt="Music Bio Headshot">
             </div>
           </div>
         </div>
       </section>
 
       <!-- Recent Releases -->
-       
+
       <section class="recent-work">
         <div class="container">
           <h2 class="section-title">Music Portfolio</h2>
@@ -333,7 +376,7 @@
               </div>
             </div>
           </div>
-      
+
           <div class="portfolio-grid" id="musicGrid">
             /// Music items will be loaded here
           </div>
@@ -348,7 +391,7 @@
       <section class="portfolio">
         <div class="container large">
           <h2 class="section-title">Portfolio</h2>
-          
+
           <div class="portfolio-loading" id="photographyLoading">
             <div class="masonry-loading">
               <div class="loading-item">
@@ -378,7 +421,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="portfolio-grid" id="photographyGrid">
             <!-- Photography items will be loaded here -->
           </div>
@@ -421,7 +464,7 @@
       <section class="services">
         <div class="container">
           <h2 class="section-title">Services</h2>
-          
+
           <div class="services-grid">
             <div class="service">
               <div class="service-icon">
@@ -475,7 +518,7 @@
         <div class="container">
           <h2 class="section-title">Contact</h2>
           <p class="contact-description">Let's collaborate! Whether you're interested in acting, photography, music, or web design services, I'd love to hear from you. Fill out the form below and I'll get back to you as soon as possible.</p>
-          
+
           <div class="contact-form-container">
             <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
               <input type="hidden" name="access_key" value="83d56d93-5eb7-4887-8f19-179a1c6a9478">        
@@ -512,6 +555,20 @@
           </div>
         </div>
       </section>
+
+      <section class="subscribe">
+        <h3 class="subscribe-title">Be the first to know! Stay tuned for exclusive updates, behind-the-scenes content, and early access to our latest projects as we continue to grow and create. Join our mailing list today!</h3>
+        <div class="subscription-form-container">
+          <form action="https://api.web3forms.com/submit" method="POST" class="subscription-form">
+            <input type="hidden" name="access_key" value="83d56d93-5eb7-4887-8f19-179a1c6a9478">        
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <div class="form-button">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -536,7 +593,7 @@
             Official website of Joshua Screen — Actor, Music Artist, and Photographer.
           </p>
         </div>
-        
+
       <div class="footer-bottom">
         <p>&copy; 2025 JTSCREEN LLC. All rights reserved.</p>
       </div>
