@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }  
 
-  if (initialPage != 'home' || initialPage != 'acting' || initialPage != 'music' || initialPage != 'photography' || initialPage != 'contact') {
+  if (initialPage != 'home' && initialPage != 'acting' && initialPage != 'music' && initialPage != 'photography' && initialPage != 'contact') {
     initialPage = 'home'; 
   }
   showPage(initialPage);
