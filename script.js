@@ -8,8 +8,7 @@ let currentPage = 'home';
 document.addEventListener('DOMContentLoaded', function() {
   lucide.createIcons();
 
-  const initialPage = location.pathname.replace('/', '') || 'home';
-  showPage(initialPage);
+  showPage('home');
   updateNavigation();
 });
 
