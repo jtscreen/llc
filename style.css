@@ -476,8 +476,6 @@ p {
 .portfolio-grid {
   display: grid;
   gap: var(--spacing-xl);
-  grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
 }
 
 .portfolio-item {
@@ -605,8 +603,6 @@ p {
 .featured-grid {
   display: grid;
   gap: var(--spacing-xl);
-  display: grid;
-  grid-template-columns: 1fr;
 }
 
 .featured-item {
@@ -1231,11 +1227,11 @@ p {
   }
 
   .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .featured-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .services-grid {
@@ -1278,9 +1274,6 @@ p {
   .hero{
     background-image: url('img/logo/mobileCoverPhoto.jpg');
   }
-  .portfolio-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 
 @media (min-width: 768px) {
@@ -1300,14 +1293,10 @@ p {
     grid-template-columns: 1fr 400px;
     gap: var(--spacing-2xl);
   }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
-  .news-image .display {
+    .news-image .display {
     margin: auto;
   }
 }
