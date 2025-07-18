@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
       homePage.classList.add('active');
     }
   }  
+  console.log(initialPage);
   showPage(initialPage);
   updateNavigation();
 });

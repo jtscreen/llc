@@ -802,7 +802,7 @@ let portfolioData = {
       year: 2024,
       featured: false
     },
-{
+    {
       id: 51,
       title: "Anella(1)",
       description: "Anella photo shoot",
