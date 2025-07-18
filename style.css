@@ -582,6 +582,29 @@ p {
   object-fit: cover;
 }
 
+.extra-links {
+  text-align: center;
+  margin-top: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+.link-container {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-direction: row;
+}
+
+.link img{
+  width: auto;
+  height: 3rem;
+  transition: transform 0.2s ease;
+}
+
+.link img:hover {
+  transform: scale(1.1);
+}
+
 /* Text overlay */
 .download-label {
   font-family: var(--font-body);
