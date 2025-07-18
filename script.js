@@ -20,7 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
       homePage.classList.add('active');
     }
   }  
-  console.log(initialPage);
+
+  if (initialPage != 'home' || initialPage != 'acting' || initialPage != 'music' || initialPage != 'photography' || initialPage != 'contact') {
+    initialPage = 'home'; 
+  }
   showPage(initialPage);
   updateNavigation();
 });
