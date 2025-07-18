@@ -65,6 +65,7 @@ function showPage(pageId) {
     } else if (pageId === 'acting') {
       loadCategoryItems('acting');
       setupHeadshotCarousel();
+      loadActingMaterials();
       closeMobileMenu();
     } else if (pageId === 'music') {
       loadCategoryItems('music');
@@ -463,6 +464,31 @@ function openGallery(item, index) {
     overlay.appendChild(descEl);
   }
   document.body.appendChild(overlay);
+}
+
+// Load acting materials (iframe and downloads)
+function loadActingMaterials() {
+  const iframeLoading = document.getElementById('iframeLoading');
+  const reelContainer = document.getElementById('reelContainer');
+  const downloadLoading = document.getElementById('downloadLoading');
+  const downloadContainer = document.getElementById('downloadContainer');
+  
+  if (!iframeLoading || !reelContainer || !downloadLoading || !downloadContainer) return;
+  
+  // Show loading states
+  iframeLoading.style.display = 'block';
+  reelContainer.style.display = 'none';
+  downloadLoading.style.display = 'flex';
+  downloadContainer.style.display = 'none';
+  
+  // Simulate loading time and then show content
+  setTimeout(() => {
+    // Hide loading states and show content
+    iframeLoading.style.display = 'none';
+    reelContainer.style.display = 'block';
+    downloadLoading.style.display = 'none';
+    downloadContainer.style.display = 'flex';
+  }, 800);
 }
 
 // Handle window resize for responsive behavior

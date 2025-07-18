@@ -212,10 +212,34 @@
         <div class="container">
             <h2 class="section-title">My Material</h2>
             <h3 id="sub-description" class="description">Press next, next to the pause button to go through all of the material</h3>
-                <div class="reel">
-                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/videoseries?si=jFQjfG0HIXfejEy2&amp;list=PLEtB1iosCuiwwJ75pH5wzKcZlNl6psrQH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+            <!-- Iframe Loading -->
+            <div class="iframe-loading" id="iframeLoading">
+              <div class="loading-item">
+                <div class="loading-video"></div>
+              </div>
+            </div>
+            
+            <div class="reel" id="reelContainer" style="display: none;">
+                <iframe class="responsive-iframe" src="https://www.youtube.com/embed/videoseries?si=jFQjfG0HIXfejEy2&amp;list=PLEtB1iosCuiwwJ75pH5wzKcZlNl6psrQH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            
+        <!-- Download Loading -->
+        <div class="download-loading" id="downloadLoading">
+            <h2 class="section-subtitle">Downloads</h2>
+            <div class="download-container">
+                <div class="loading-item">
+                  <div class="loading-download"></div>
+                  <div class="loading-text small"></div>
                 </div>
-        <div class="download">
+                <div class="loading-item">
+                  <div class="loading-download"></div>
+                  <div class="loading-text small"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="download" id="downloadContainer" style="display: none;">
             <h2 class="section-subtitle">Downloads</h2>
             <div class="download-container">
                 <a class="download-material" href="img/docs/headshot.pdf" target="_blank">
