@@ -1297,6 +1297,7 @@ p {
 @media (max-width: 600px) {
   .hero{
     background-image: url('img/logo/mobileCoverPhoto.jpg');
+    background-position: center top;
   }
 }
 
