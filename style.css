@@ -582,6 +582,10 @@ p {
   display: block;
   object-fit: cover;
 }
+.rates{
+  text-align: center;
+  margin-top: var(--spacing-md);
+}
 
 .extra-links {
   text-align: center;
