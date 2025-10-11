@@ -1,5 +1,3 @@
-// Mobile menu state
-
 // Current page
 let currentPage = 'home';
 
