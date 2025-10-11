@@ -270,17 +270,6 @@ p {
   background-color: rgba(238, 108, 77, 0.9);
 }
 
-.btn-secondary {
-  background-color: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
-}
-
-.btn-secondary:hover {
-  background-color: var(--white);
-  color: var(--dark-blue);
-}
-
 /* Sections */
 .about,
 .portfolio,
@@ -310,10 +299,6 @@ p {
 
 .services {
   background-color: var(--white);
-}
-
-.featured-work {
-  background-color: var(--light-blue);
 }
 
 .section-title {
@@ -516,20 +501,6 @@ p {
   background-color: rgba(41, 50, 65, 0.1);
 }
 
-.portfolio-info {
-  padding: var(--spacing-sm) 0;
-}
-
-.portfolio-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.portfolio-description {
-  color: var(--medium-blue);
-}
-
 .reel{
     position: relative;
     overflow: hidden;
@@ -626,167 +597,8 @@ p {
   pointer-events: none;
   white-space: nowrap;  
 }
-
-/* Featured Grid */
-.featured-grid {
-  display: grid;
-  gap: var(--spacing-xl);
-}
-
-.featured-item {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.featured-item:hover {
-  transform: translateY(-5px);
-}
-
-.featured-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  aspect-ratio: 4/3;
-  margin-bottom: var(--spacing-md);
-}
-
-.featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.featured-item:hover .featured-image img {
-  transform: scale(1.05);
-}
-
-.featured-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(41, 50, 65, 0.3);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.featured-item:hover .featured-overlay {
-  background-color: rgba(41, 50, 65, 0.2);
-}
-
-.featured-overlay-text {
-  font-family: var(--font-display);
-  color: var(--white);
-  font-size: 1.5rem;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.featured-item:hover .featured-overlay-text {
-  opacity: 1;
-}
-
-.featured-category {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.featured-description {
-  color: var(--medium-blue);
-}
-
-/* Masonry Grid */
-.masonry-grid {
-  columns: 1;
-  column-gap: var(--spacing-lg);
-}
-
-.masonry-item {
-  break-inside: avoid;
-  margin-bottom: var(--spacing-lg);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.masonry-item:hover {
-  transform: translateY(-5px);
-}
-
-.masonry-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: 0.5rem;
-}
-
-.masonry-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.masonry-item:hover .masonry-image img {
-  transform: scale(1.05);
-}
-
-.masonry-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(41, 50, 65, 0.2);
-  transition: background-color 0.3s ease;
-}
-
-.masonry-item:hover .masonry-overlay {
-  background-color: rgba(41, 50, 65, 0.1);
-}
-
-.masonry-info {
-  padding: var(--spacing-sm) 0;
-}
-
-.masonry-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.masonry-description {
-  color: var(--medium-blue);
-  font-size: 0.875rem;
-}
-
-/* Timeline */
-.timeline {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.timeline-item {
-  border-left: 4px solid var(--orange);
-  padding-left: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
-}
-
-.timeline-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.timeline-role {
-  color: var(--medium-blue);
-  margin-bottom: var(--spacing-xs);
-}
-
-.timeline-year {
-  color: var(--medium-blue);
-  font-size: 0.875rem;
-}
-
-/* Releases */
+/*
+Releases 
 .releases {
   display: flex;
   flex-direction: column;
@@ -839,7 +651,7 @@ p {
   color: var(--medium-blue);
   font-size: 0.875rem;
 }
-
+*/
 /* Services */
 .services-grid {
   display: grid;
@@ -954,13 +766,14 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.subscribe {
-  background-color: var(--white);
+.subscribe, .subscribe-contact{
   padding: var(--spacing-2xl);
   border-radius: 0.5rem;
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
+.subscribe{background-color: var(--white);}
+.subscribe-contact{background-color: var(--light-blue);}
 
 .subscribe-title {
   font-size: 1.25rem;
@@ -1256,10 +1069,6 @@ p {
 
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .featured-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .services-grid {

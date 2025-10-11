@@ -1,5 +1,4 @@
 // Mobile menu state
-let mobileMenuOpen = false;
 
 // Current page
 let currentPage = 'home';
@@ -88,10 +87,7 @@ function showPage(pageId) {
     } else if (pageId === 'photography') {
       loadCategoryItems('photography');
       closeMobileMenu();
-    } else if (pageId === 'portfolio') {
-      showPortfolioGalleries();
-      closeMobileMenu();
-    }
+    } 
   }
   window.scrollTo(0, 0);
 }
@@ -177,51 +173,21 @@ function setupHeadshotCarousel() {
 // Load featured items for home page
 function loadFeaturedItems() {
   const featuredGrid = document.getElementById('featuredGrid');
-  const featuredLoading = document.getElementById('featuredLoading');
   
-  if (!featuredGrid || !featuredLoading) return;
+  if (!featuredGrid) return;
   
-  featuredLoading.style.display = 'block';
   featuredGrid.style.display = 'none';
+  featuredGrid.innerHTML = '';
   
-  setTimeout(() => {
-    featuredGrid.innerHTML = '';
-    
-    const categories = ['acting', 'music', 'photography'];
-    categories.forEach(category => {
-      const categoryItems = portfolioData[category];
-      const featuredItem = categoryItems.find(item => item.featured) || categoryItems[0];
-      
-      if (featuredItem) {
-        featuredGrid.appendChild(createFeaturedItem(category, featuredItem));
-      }
-    });
-    
-    featuredLoading.style.display = 'none';
-    featuredGrid.style.display = 'grid';
-  }, 300);
-}
-
-// Create featured item element
-function createFeaturedItem(category, item) {
-  const div = document.createElement('div');
-  div.className = 'featured-item';
-  div.onclick = () => showPage(category);
-  
-  const categoryNames = {
-    acting: 'Acting',
-    music: 'Music',
-    photography: 'Photography'
-  };
-  
-  div.innerHTML = `
-    <div class="featured-image">
-      <img src="${item.imageUrl}" alt="${item.title}" loading="lazy">
-    </div>
-    <h3 class="featured-category">${categoryNames[category]}</h3>
-  `;
-  
-  return div;
+  const categories = ['acting', 'music', 'photography'];
+  categories.forEach(category => {
+    const categoryItems = portfolioData[category];
+    const featuredItem = categoryItems.find(item => item.featured) || categoryItems[0];      
+    if (featuredItem) {
+      featuredGrid.appendChild(createFeaturedItem(category, featuredItem));
+    }
+  });  
+  featuredGrid.style.display = 'grid';
 }
 
 // Load category items for portfolio pages
