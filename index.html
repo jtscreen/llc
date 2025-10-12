@@ -29,7 +29,7 @@
     <div class="nav-container">
       <div class="nav-content">
         <div class="nav-logo">
-          <a href="#" onclick="navigateTo('home'); return false" class="logo-link"><img class="logo" src="img/logo/logo.webp"></a>
+          <a href="#" onclick="navigateTo('home'); return false" class="logo-link"><img alt="logo" class="logo" src="img/logo/logo.webp"></a>
         </div>
 
         <!-- Desktop Navigation -->
@@ -42,7 +42,7 @@
         </div>
 
         <!-- Mobile Navigation Button -->
-        <button class="nav-mobile-btn" onclick="toggleMobileMenu()">
+        <button name="menu" class="nav-mobile-btn" onclick="toggleMobileMenu()">
           <i data-lucide="menu" class="nav-icon"></i>
         </button>
       </div>
@@ -161,7 +161,7 @@
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <input type="hidden" name="redirect" value="https://web3forms.com/success">
                 <div class="form-button">
-                  <button type="submit" class="btn btn-primary">Sign Up</button>
+                  <button name="Sign Up" type="submit" class="btn btn-primary">Sign Up</button>
                 </div>
               </form>
             </div>
@@ -240,11 +240,11 @@
             <h2 class="section-subtitle">Downloads</h2>
             <div class="download-container">
                 <a class="download-material" href="img/docs/headshot.pdf" target="_blank">
-                  <img src="img/home/headshot1.webp">
+                  <img alt="headshot" src="img/home/headshot1.webp">
                   <span class="download-label">Headshot</span>
                 </a>
                 <a class="download-material" href="img/docs/resume.pdf" target="_blank">
-                  <img src="img/docs/resume.webp">
+                  <img alt="resume" src="img/docs/resume.webp">
                   <span class="download-label">Resume</span>
                 </a>
             </div>
@@ -253,8 +253,8 @@
         <div class="extra-links">
           <h2 class="section-subtitle">Extra Links</h2>
           <div class="link-container">
-            <a href="https://www.imdb.com/name/nm13843778/" target="_blank"><span class="link"><img src="img/logo/IMDb.webp"></span></a>
-            <a href="https://www.broadwayworld.com/search/?q=Joshua+Screen&cx=003281041504712504013%3Ama8kxnaa1hu&cof=FORID%3A11&ie=UTF-8&search_type%5B%5D=site" target="_blank"><span class="link"><img src="img/logo/bwaywrld.webp"></span></a>
+            <a href="https://www.imdb.com/name/nm13843778/" target="_blank"><span class="link"><img alt="IMBb logo" src="img/logo/IMDb.webp"></span></a>
+            <a href="https://www.broadwayworld.com/search/?q=Joshua+Screen&cx=003281041504712504013%3Ama8kxnaa1hu&cof=FORID%3A11&ie=UTF-8&search_type%5B%5D=site" target="_blank"><span class="link"><img src="img/logo/bwaywrld.webp" alt="broadway world logo"></span></a>
           </div>
         </div>
       </section>
@@ -459,7 +459,7 @@
         <div class="container">
           <div class="bio-content">
             <div class="bio-image">
-              <img class="bio-headshot" src="img/home/photoPortrait.webp">
+              <img alt="photography bio headshot" class="bio-headshot" src="img/home/photoPortrait.webp">
             </div>
             <div class="bio-text">
               <h2 class="bio-title">Visual Storyteller</h2>
@@ -566,7 +566,7 @@
               <textarea name="message" placeholder="Message" required></textarea>
               <input type="hidden" name="redirect" value="https://web3forms.com/success">
               <div class="form-button">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button name="Submit" type="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>
           </div>
@@ -581,7 +581,7 @@
             <input type="email" name="email" placeholder="Enter your email" required>
             <input type="hidden" name="redirect" value="https://web3forms.com/success">
             <div class="form-button">
-              <button type="submit" class="btn btn-primary">Sign Up</button>
+              <button name="Sign Up" type="submit" class="btn btn-primary">Sign Up</button>
             </div>
           </form>
         </div>
@@ -597,16 +597,16 @@
           <h3 class="footer-title"> </h3>
           <div class="footer-social">
             <a target="_blank" href="https://www.instagram.com/jtscreen/" class="social-link">
-              <img src="img/logo/insta.webp" class="icon">
+              <img src="img/logo/insta.webp" class="icon" alt="Instagram logo">
             </a>
             <a target="_blank" href="https://www.linkedin.com/in/joshua-screen-b86791283/" class="social-link">
-              <img src="img/logo/linkedin.webp" class="icon">
+              <img src="img/logo/linkedin.webp" class="icon" alt="LinkedIn logo">
             </a>
             <a target="_blank" href="https://www.imdb.com/name/nm13843778/" class="social-link">
-              <img src="img/logo/IMDb.webp" class="icon">
+              <img src="img/logo/IMDb.webp" class="icon" alt="IMDB logo">
             </a>
              <a target="_blank" href="mailto:jtscreen23@gmail.com" class="social-link">
-              <img src="img/logo/mail.webp" class="icon">
+              <img src="img/logo/mail.webp" class="icon" alt="Email logo">
             </a>
           </div>
           <p class="footer-description">
@@ -620,13 +620,6 @@
     </div>
   </footer>
 
-  <!-- Lightbox Modal -->
-  <div id="lightboxModal" class="lightbox-modal" style="display:none;">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" class="lightbox-img" src="" alt="">
-    <span class="lightbox-prev" onclick="prevLightbox()">&lt;</span>
-    <span class="lightbox-next" onclick="nextLightbox()">&gt;</span>
-  </div>
   <script src="database.js"></script>
   <script src="script.js"></script>
 </body>
