@@ -204,7 +204,7 @@ p {
   position: relative;
   overflow: hidden;
 
-  background-image: url('img/logo/coverPhoto.jpg');
+  background-image: url('img/logo/coverPhoto.webp');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -502,41 +502,41 @@ p {
 }
 
 .reel{
-    position: relative;
-    overflow: hidden;
-    width: 80vw;
-    margin:  0 auto;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  position: relative;
+  overflow: hidden;
+  width: 80vw;
+  margin:  0 auto;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 
 .responsive-iframe{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.5rem;
-    max-width: 1200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  max-width: 1200px;
 }
 
 .download{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5vh;
 }
 
 .download-container {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .download-material{
   position: relative;
   display: inline-block;
-  width: 25vw;
-  height: 25vw;
+  width: 20vw;
+  height: 20vw;
   margin: 3vh 5vw;
   border-radius: 50%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -564,17 +564,21 @@ p {
   display: flex;
   flex-direction: column;
 }
+.extra-links h2{
+    font-size: var(--spacing-lg);
+}
 .link-container {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-large);
   flex-direction: row;
 }
 
 .link img{
   width: auto;
-  height: 3rem;
+  height: 4rem;
   transition: transform 0.2s ease;
+  margin: auto 5vw;
 }
 
 .link img:hover {
@@ -1109,7 +1113,7 @@ Releases
 
 @media (max-width: 600px) {
   .hero{
-    background-image: url('img/logo/mobileCoverPhoto.jpg');
+    background-image: url('img/logo/mobileCoverPhoto.webp');
     background-position: center top;
   }
 }

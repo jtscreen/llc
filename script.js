@@ -115,9 +115,9 @@ function navigateTo(pageId) {
 }
 
 const headshots = [
-  'img/home/headshot1.JPG',
-  'img/home/headshot2.JPG',
-  'img/home/headshot3.JPG'
+  'img/home/headshot1.webp',
+  'img/home/headshot2.webp',
+  'img/home/headshot3.webp'
 ];
 
 let currentHeadshot = 0;
