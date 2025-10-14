@@ -42,7 +42,7 @@
         </div>
 
         <!-- Mobile Navigation Button -->
-        <button name="menu" class="nav-mobile-btn" onclick="toggleMobileMenu()">
+        <button name="drop down menu" class="nav-mobile-btn" onclick="toggleMobileMenu()">
           <i data-lucide="menu" class="nav-icon"></i>
         </button>
       </div>
@@ -149,7 +149,7 @@
               </div>
             </div>
             <div class="news-image">
-              <img class="display" src="img/acting/fgallery/news.webp" alt="News and updates">
+              <img class="display" src="img/acting/fgallery/news.webp" alt="News and updates" loading="lazy">
             </div>
           </div>
 
@@ -178,8 +178,8 @@
         <div class="container">
           <div class="bio-content">
             <div class="bio-image">
-                <img id="bio-headshot-current" class="bio-headshot" src="img/home/headshot1.webp" alt="Bio Headshot" />
-                <img id="bio-headshot-next" class="bio-headshot" src="img/home/headshot2.webp" alt="Bio Headshot Next" style="opacity:0; position:absolute; left:0; top:0; width:100%; height:100%;" />
+                <img id="bio-headshot-current" class="bio-headshot" src="img/home/headshot1.webp" alt="Bio Headshot" loading="lazy">
+                <img id="bio-headshot-next" class="bio-headshot" src="img/home/headshot2.webp" alt="Bio Headshot Next" style="opacity:0; position:absolute; left:0; top:0; width:100%; height:100%;" loading="lazy">
             </div>
             <div class="bio-text">
               <h2 class="bio-title">Joshua Screen</h2>
@@ -240,11 +240,11 @@
             <h2 class="section-subtitle">Downloads</h2>
             <div class="download-container">
                 <a class="download-material" href="img/docs/headshot.pdf" target="_blank">
-                  <img alt="headshot" src="img/home/headshot1.webp">
+                  <img alt="headshot" src="img/home/headshot1.webp" loading="lazy">
                   <span class="download-label">Headshot</span>
                 </a>
                 <a class="download-material" href="img/docs/resume.pdf" target="_blank">
-                  <img alt="resume" src="img/docs/resume.webp">
+                  <img alt="resume" src="img/docs/resume.webp" loading="lazy">
                   <span class="download-label">Resume</span>
                 </a>
             </div>
@@ -253,8 +253,8 @@
         <div class="extra-links">
           <h2 class="section-subtitle">Extra Links</h2>
           <div class="link-container">
-            <a href="https://www.imdb.com/name/nm13843778/" target="_blank"><span class="link"><img alt="IMBb logo" src="img/logo/IMDb.webp"></span></a>
-            <a href="https://www.broadwayworld.com/search/?q=Joshua+Screen&cx=003281041504712504013%3Ama8kxnaa1hu&cof=FORID%3A11&ie=UTF-8&search_type%5B%5D=site" target="_blank"><span class="link"><img src="img/logo/bwaywrld.webp" alt="broadway world logo"></span></a>
+            <a href="https://www.imdb.com/name/nm13843778/" target="_blank"><span class="link"><img alt="IMBb logo" src="img/logo/IMDb.webp" loading="lazy"></span></a>
+            <a href="https://www.broadwayworld.com/search/?q=Joshua+Screen&cx=003281041504712504013%3Ama8kxnaa1hu&cof=FORID%3A11&ie=UTF-8&search_type%5B%5D=site" target="_blank"><span class="link"><img src="img/logo/bwaywrld.webp" alt="broadway world logo" loading="lazy"></span></a>
           </div>
         </div>
       </section>
@@ -318,7 +318,7 @@
               </div>
             </div>
             <div class="bio-image">
-              <img src="img/home/musicPortrait.webp" class="bio-headshot" alt="Music Bio Headshot">
+              <img src="img/home/musicPortrait.webp" class="bio-headshot" alt="Music Bio Headshot" loading="lazy">
             </div>
           </div>
         </div>
@@ -459,7 +459,7 @@
         <div class="container">
           <div class="bio-content">
             <div class="bio-image">
-              <img alt="photography bio headshot" class="bio-headshot" src="img/home/photoPortrait.webp">
+              <img alt="photography bio headshot" class="bio-headshot" src="img/home/photoPortrait.webp" loading="lazy">
             </div>
             <div class="bio-text">
               <h2 class="bio-title">Visual Storyteller</h2>
@@ -620,7 +620,7 @@
     </div>
   </footer>
 
-  <script src="database.js"></script>
-  <script src="script.js"></script>
+  <script src="database.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

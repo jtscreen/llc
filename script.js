@@ -57,7 +57,6 @@ function closeMobileMenu() {
 
 //Page Navigation
 function showPage(pageId) {
-  console.log(`Showing page: ${pageId}`);
     // Hide all pages
     document.querySelectorAll('.page').forEach(page => {
     page.classList.remove('active');
@@ -335,6 +334,7 @@ function openGallery(item, index) {
   overlay.style.zIndex = '10000';
 
   const imgEl = document.createElement('img');
+  imgEl.loading = "lazy";
   imgEl.src = galleryItems[currentIndex].imageUrl;
   imgEl.style.maxWidth = '90vw';
   imgEl.style.maxHeight = '70vh';
