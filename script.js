@@ -181,8 +181,8 @@ function loadFeaturedItems() {
     const categoryItems = portfolioData[category];
     const featuredItem = categoryItems.find(item => item.featured) || categoryItems[0];      
     if (featuredItem) {
-      featuredGrid.appendChild(createFeaturedItem(category, featuredItem));
-    }
+        featuredGrid.appendChild(createFeaturedItem(category, featuredItem));
+      }
   });  
   featuredGrid.style.display = 'grid';
 }
@@ -278,7 +278,81 @@ function createPortfolioItem(item, isMasonry = false, index = 0) {
 
   // Add click handler to open gallery
   div.addEventListener('click', function() {
-    openGallery(item, index);
+    console.log(item.category);
+    if (item.category === "production") {
+      featuredProductions = portfolioData.photography.filter(item => item.category === "production" && item.featured === true);
+      console.log(featuredProductions);
+
+      const galleryOverlay = document.createElement('div');
+      galleryOverlay.id = 'galleryOverlayContainer';
+      galleryOverlay.style.position = 'fixed';
+      galleryOverlay.id = 'galleryOverlay';
+      galleryOverlay.style.top = '0';
+      galleryOverlay.style.left = '0';
+      galleryOverlay.style.width = '100vw';
+      galleryOverlay.style.height = '100vh';
+      galleryOverlay.style.background = 'rgba(0,0,0,0.9)';
+      galleryOverlay.style.alignItems = 'center';
+      galleryOverlay.style.justifyContent = 'center';
+      galleryOverlay.style.zIndex = '5000';
+
+      for (let i = 0; i < featuredProductions.length; i++) {
+        const galleryContainer = document.createElement('div');
+        const imgEl = document.createElement('img');
+        const titleEl = document.createElement('span');
+
+        imgEl.loading = "lazy";
+        imgEl.src = featuredProductions[i].imageUrl;
+        imgEl.title = featuredProductions[i].title;
+        imgEl.style.maxWidth = '35vw';
+        imgEl.style.maxHeight = '40vh';
+        imgEl.style.alignItems = 'center';
+        imgEl.style.justifyContent = 'center';
+        imgEl.style.borderRadius = '0.5rem';
+        imgEl.style.boxShadow = '0 8px 32px rgba(0,0,0,0.3)';
+        imgEl.style.cursor = 'pointer';
+
+        titleEl.textContent = featuredProductions[i].title;
+        titleEl.style.color = '#fff';
+        titleEl.style.margin = '0 0 0.5rem 0';
+        titleEl.style.maxWidth = '35vw';
+        imgEl.style.maxHeight = 'auto';
+        titleEl.style.textAlign = 'center';
+        titleEl.style.display = 'block';
+        
+        imgEl.addEventListener('click', function() {
+          openGallery(featuredProductions[i], 1);
+          
+        });
+
+        galleryOverlay.appendChild(galleryContainer);
+        galleryContainer.appendChild(imgEl);
+        galleryContainer.appendChild(titleEl);
+      }
+
+      const close = document.createElement('div');
+      close.textContent = 'x';
+      close.style.position = 'fixed';
+      close.style.right = '2rem';
+      close.style.top = '0%';
+      close.style.padding = "2rem";
+      close.style.fontSize = '2.5rem';
+      close.style.color = '#fff';
+      close.style.cursor = 'pointer';
+      close.style.userSelect = 'none';
+      close.id = 'galleryClose';
+      close.style.zIndex = '5000';
+      close.addEventListener('click', function(e) {        
+        e.stopPropagation();
+        document.body.removeChild(galleryOverlay);
+        document.body.removeChild(close);
+      });
+      
+      document.body.appendChild(galleryOverlay);
+      document.body.appendChild(close);
+    } else {
+      openGallery(item, index);
+    }
   });
   return div;
 }
@@ -391,7 +465,7 @@ function openGallery(item, index) {
   close.style.color = '#fff';
   close.style.cursor = 'pointer';
   close.style.userSelect = 'none';
-  close.style.zIndex = '10001';
+  close.style.zIndex = '10002';
 
   leftArrow.addEventListener('click', function(e) {
     e.stopPropagation();
@@ -410,16 +484,9 @@ function openGallery(item, index) {
   });
 
   close.addEventListener('click', function(e) {
+    e.stopPropagation();
     document.body.removeChild(overlay);
   });
-
-  /*
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) {
-      document.body.removeChild(overlay);
-    }
-  });
-  */
 
   // Add keyboard navigation
   function handleKeydown(e) {

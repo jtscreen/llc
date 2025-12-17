@@ -434,6 +434,11 @@ p {
   color: var(--medium-blue);
   margin-bottom: var(--spacing-md);
 }
+
+#music .bio-text{
+  padding: 0 var(--spacing-sm);
+}
+
 #photography .bio{
     background-color: var(--light-blue);
 }
@@ -543,9 +548,11 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
+
 .download-material:hover {
     transform: scale(1.05);
 }
+
 .download-material img {
   display: block;
   width: 100%;
@@ -554,6 +561,7 @@ p {
   display: block;
   object-fit: cover;
 }
+
 .rates{
   text-align: center;
   margin-top: var(--spacing-md);
@@ -565,9 +573,11 @@ p {
   display: flex;
   flex-direction: column;
 }
+
 .extra-links h2{
     font-size: var(--spacing-lg);
 }
+
 .link-container {
   display: flex;
   justify-content: center;
@@ -601,6 +611,13 @@ p {
   border-radius: 4px;
   pointer-events: none;
   white-space: nowrap;  
+}
+
+/*Production Gallery Overlay*/
+#galleryOverlay {
+  display: grid;
+  grid-template-columns: repeat(2, 40vw);
+  padding: 5vh 5vw;
 }
 /*
 Releases 
@@ -657,6 +674,7 @@ Releases
   font-size: 0.875rem;
 }
 */
+
 /* Services */
 .services-grid {
   display: grid;
@@ -1112,6 +1130,12 @@ Releases
   }
 }
 
+@media (max-width: 640px) {
+  #galleryOverlay{
+    grid-template-columns: repeat(1, 80vw);
+  }
+}
+
 @media (max-width: 600px) {
   .hero{
     background-image: url('img/logo/mobileCoverPhoto.webp');
@@ -1139,7 +1163,7 @@ Releases
 }
 
 @media (max-width: 768px) {
-    .news-image .display {
+  .news-image .display {
     margin: auto;
   }
 }

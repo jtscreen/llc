@@ -1,6 +1,8 @@
 let portfolioData = {
+  // Acting Entries
   acting: [
     {
+      //Theater Entries
       title: "[Title of Show]",
       description: "Lead Role - Hunter",
       imageUrl: "img/acting/tgallery/tos2.webp",
@@ -126,6 +128,8 @@ let portfolioData = {
       year: 2022,
       featured: false
     },
+
+    //Film Entries
     {
       title: "No Place is Home",
       description: "Day Player - Ryder",
@@ -162,6 +166,8 @@ let portfolioData = {
       year: 2023,
       featured: false
     },
+
+    //Performance Entries
     {
       title: "Paradise Wind",
       description: "Movement Piece - Performer",
@@ -244,6 +250,8 @@ let portfolioData = {
       featured: false
     }
   ],
+
+  //Music Entries
   music: [
     {
       title: "Nocturne in E Minor",
@@ -278,7 +286,10 @@ let portfolioData = {
       featured: false
     }
   ],
+
+  // Photography Entries
   photography: [
+    //Headshot Entries
     {
       title: "Arden(1)",
       description: "Arden Cathers Headshot",
@@ -324,132 +335,9 @@ let portfolioData = {
       year: 2023,
       featured: false
     },
+
+    //Production Entries
     {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists1.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists2.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists3.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists4.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists5.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists6.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-  {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists8.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },{
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists9.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },{
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists10.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists11.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists12.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists13.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists14.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      title: "We Are Artists",
-      description: "Written by Dylan Perez",
-      imageUrl: "img/photo/production-gallery/artists/artists15.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
-      id: 22,
       title: "Godspell",
       description: "Fordham Theater Production",
       imageUrl: "img/photo/production-gallery/godspell/godspell1.webp",
@@ -632,6 +520,15 @@ let portfolioData = {
     {
       title: "Full Contact",
       description: "Leviathan Lab Production",
+      imageUrl: "img/photo/production-gallery/contact/Contact8.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2025,
+      featured: true
+    },
+    {
+      title: "Full Contact",
+      description: "Leviathan Lab Production",
       imageUrl: "img/photo/production-gallery/contact/Contact3.webp",
       category: "production",
       subcategory: "photography",
@@ -693,22 +590,13 @@ let portfolioData = {
       featured: false
     },
     {
-      title: "Full Contact",
-      description: "Leviathan Lab Production",
-      imageUrl: "img/photo/production-gallery/contact/Contact8.webp",
-      category: "production",
-      subcategory: "photography",
-      year: 2025,
-      featured: false
-    },
-    {
       title: "X#*! Very Much, Mom",
       description: "Leviathan Lab Production",
       imageUrl: "img/photo/production-gallery/bleep/bleep6.webp",
       category: "production",
       subcategory: "photography",
       year: 2025,
-      featured: false
+      featured: true
     },  
     {
       title: "X#*! Very Much, Mom",
@@ -800,6 +688,132 @@ let portfolioData = {
       year: 2025,
       featured: false
     },  
+        {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists1.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: true
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists2.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists3.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists4.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists5.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists6.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+{
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists8.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists9.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },{
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists10.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists11.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists12.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists13.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists14.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+    {
+      title: "We Are Artists",
+      description: "Written by Dylan Perez",
+      imageUrl: "img/photo/production-gallery/artists/artists15.webp",
+      category: "production",
+      subcategory: "photography",
+      year: 2024,
+      featured: false
+    },
+
+    //Graduation Entries
     {
       title: "Ara(1)",
       description: "Ara Tandon Graduation photo",
@@ -881,22 +895,33 @@ let portfolioData = {
       year: 2024,
       featured: false
     },
+
+    //Portrait Entries
     {
-      title: "Anella(1)",
-      description: "Anella photo shoot",
-      imageUrl: "img/photo/portrait-gallery/anella1.webp",
+      title: "First Language Photoshoot",
+      description: "First Language Promotion Shoot",
+      imageUrl: "img/photo/portrait-gallery/firstLanguage3.webp",
       category: "portrait",
       subcategory: "photography",
-      year: 2024,
+      year: 2025,
+      featured: true
+    },
+    {
+      title: "First Language Photoshoot",
+      description: "First Language Promotion Shoot",
+      imageUrl: "img/photo/portrait-gallery/firstLanguage.webp",
+      category: "portrait",
+      subcategory: "photography",
+      year: 2025,
       featured: false
     },
     {
-      title: "Anella(2)",
-      description: "Anella photo shoot",
-      imageUrl: "img/photo/portrait-gallery/anella2.webp",
+      title: "First Language Photoshoot",
+      description: "First Language Promotion Shoot",
+      imageUrl: "img/photo/portrait-gallery/firstLanguage2.webp",
       category: "portrait",
       subcategory: "photography",
-      year: 2024,
+      year: 2025,
       featured: false
     },
     {
@@ -989,6 +1014,17 @@ let portfolioData = {
       year: 2024,
       featured: false
     },
+
+    // Event Photography
+    {
+      title: "Mock Shaddi(5)",
+      description: "Mock Shaddi event",
+      imageUrl: "img/photo/event-gallery/shaddi17.webp",
+      category: "event",
+      subcategory: "photography",
+      year: 2024,
+      featured: true
+    },
     {
       title: "Mock Shaddi(1)",
       description: "Mock Shaddi event",
@@ -1026,15 +1062,6 @@ let portfolioData = {
       featured: false
     },
     {
-      title: "Mock Shaddi(5)",
-      description: "Mock Shaddi event",
-      imageUrl: "img/photo/event-gallery/shaddi17.webp",
-      category: "event",
-      subcategory: "photography",
-      year: 2024,
-      featured: true
-    },
-    {
       title: "Mock Shaddi(6)",
       description: "Mock Shaddi event",
       imageUrl: "img/photo/event-gallery/shaddi20.webp",
@@ -1062,15 +1089,6 @@ let portfolioData = {
       featured: false
     },
     {
-      title: "India Beer(2)",
-      description: "India Beer Performance",
-      imageUrl: "img/photo/event-gallery/india2.webp",
-      category: "event",
-      subcategory: "photography",
-      year: 2024,
-      featured: false
-    },
-    {
       title: "India Beer(3)",
       description: "India Beer Performance",
       imageUrl: "img/photo/event-gallery/india3.webp",
@@ -1080,30 +1098,39 @@ let portfolioData = {
       featured: false
     },
     {
-      title: "India Beer(4)",
-      description: "India Beer Performance",
-      imageUrl: "img/photo/event-gallery/india4.webp",
+      title: "First Language: EP release show",
+      description: "First Language Band Performance",
+      imageUrl: "img/photo/event-gallery/fl1.webp",
       category: "event",
       subcategory: "photography",
-      year: 2024,
+      year: 2025,
       featured: false
     },
     {
-      title: "India Beer(5)",
-      description: "India Beer Performance",
-      imageUrl: "img/photo/event-gallery/india5.webp",
+      title: "First Language: EP release show",
+      description: "First Language Band Performance",
+      imageUrl: "img/photo/event-gallery/fl2.webp",
       category: "event",
       subcategory: "photography",
-      year: 2024,
+      year: 2025,
       featured: false
     },
     {
-      title: "India Beer(6)",
-      description: "India Beer Performance",
-      imageUrl: "img/photo/event-gallery/india6.webp",
+      title: "First Language: EP release show",
+      description: "First Language Band Performance",
+      imageUrl: "img/photo/event-gallery/fl3.webp",
       category: "event",
       subcategory: "photography",
-      year: 2024,
+      year: 2025,
+      featured: false
+    },
+    {
+      title: "First Language: EP release show",
+      description: "First Language Band Performance",
+      imageUrl: "img/photo/event-gallery/fl4.webp",
+      category: "event",
+      subcategory: "photography",
+      year: 2025,
       featured: false
     }
   ],
