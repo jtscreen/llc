@@ -30,6 +30,42 @@ let portfolioData = {
       featured: false
     },
     {
+      title: "Once",
+      description: "Featured - Andrej",
+      imageUrl: "img/acting/tgallery/once.webp",
+      category: "theater",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
+      title: "Once",
+      description: "Featured - Andrej",
+      imageUrl: "img/acting/tgallery/once1.webp",
+      category: "theater",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
+      title: "Once",
+      description: "Featured - Andrej",
+      imageUrl: "img/acting/tgallery/once2.webp",
+      category: "theater",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
+      title: "Once",
+      description: "Featured - Andrej",
+      imageUrl: "img/acting/tgallery/once3.webp",
+      category: "theater",
+      subcategory: "acting",
+      year: 2025,
+      featured: false
+    },
+    {
       title: "My Sweetest Baby Angel Princess",
       description: "Supporting - Chris",
       imageUrl: "img/acting/tgallery/msbap1.webp",
@@ -164,6 +200,15 @@ let portfolioData = {
       category: "film",
       subcategory: "acting",
       year: 2023,
+      featured: false
+    },
+    {
+      title: "Danbury",
+      description: "Supporting - Cliff",
+      imageUrl: "img/acting/fgallery/danbury.webp",
+      category: "film",
+      subcategory: "acting",
+      year: 2025,
       featured: false
     },
 
