@@ -412,7 +412,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell4.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell4.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -421,7 +421,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell5.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell5.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -430,7 +430,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell6.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell6.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -439,7 +439,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell7.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell7.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -448,7 +448,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell8.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell8.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -457,7 +457,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell9.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell9.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -466,7 +466,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell10.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell10.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -475,7 +475,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell11.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell11.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -484,7 +484,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell12.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell12.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -493,7 +493,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell13.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell13.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -502,7 +502,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell14.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell14.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -511,7 +511,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell15.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell15.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -520,7 +520,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell16.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell16.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -529,7 +529,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell17.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell17.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -538,7 +538,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell18.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell18.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -547,7 +547,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell19.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell19.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -556,7 +556,7 @@ let portfolioData = {
     {
       title: "Godspell",
       description: "Fordham Theater Production",
-      imageUrl: "img/photo/production-gallery/godspell/godspell20.JPG",
+      imageUrl: "img/photo/production-gallery/godspell/godspell20.webp",
       category: "production",
       subcategory: "photography",
       year: 2024,
@@ -932,9 +932,9 @@ let portfolioData = {
       featured: true
     },
     {
-      title: "kana(1)",
+      title: "kana(3)",
       description: "Kana Seiki Graduation photo",
-      imageUrl: "img/photo/grad-gallery/kana8.webp",
+      imageUrl: "img/photo/grad-gallery/kana7.webp",
       category: "graduation",
       subcategory: "photography",
       year: 2024,
