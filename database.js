@@ -167,15 +167,15 @@ let portfolioData = {
 
     //Film Entries
     {
-      title: "No Place is Home",
-      description: "Day Player - Ryder",
-      imageUrl: "img/acting/fgallery/home1.webp",
+      title: "A Yarn",
+      description: "Supporting - Rob",
+      imageUrl: "img/acting/fgallery/yarn2.webp",
       category: "film",
       subcategory: "acting",
       year: 2023,
-      featured: false
+      featured: true
     },
-    {
+      {
       title: "A Yarn",
       description: "Supporting - Rob",
       imageUrl: "img/acting/fgallery/yarn1.webp",
@@ -185,13 +185,13 @@ let portfolioData = {
       featured: false
     },
     {
-      title: "A Yarn",
-      description: "Supporting - Rob",
-      imageUrl: "img/acting/fgallery/yarn2.webp",
+      title: "No Place is Home",
+      description: "Day Player - Ryder",
+      imageUrl: "img/acting/fgallery/home1.webp",
       category: "film",
       subcategory: "acting",
       year: 2023,
-      featured: true
+      featured: false
     },
     {
       title: "21-Year-Old Virgin",
@@ -336,7 +336,7 @@ let portfolioData = {
   photography: [
     //Headshot Entries
     {
-      title: "Arden(1)",
+      title: "Arden",
       description: "Arden Cathers Headshot",
       imageUrl: "img/photo/headshot-gallery/arden1.webp",
       category: "headshot",
@@ -345,7 +345,7 @@ let portfolioData = {
       featured: true
     },
     {
-      title: "Bridget(1)",
+      title: "Bridget",
       description: "Bridget Barnes Headshot",
       imageUrl: "img/photo/headshot-gallery/bridget1.webp",
       category: "headshot",
@@ -354,7 +354,7 @@ let portfolioData = {
       featured: false
     },
     {
-      title: "kat(2)",
+      title: "kat",
       description: "Kat Foseman Headshot",
       imageUrl: "img/photo/headshot-gallery/kat2.webp",
       category: "headshot",
@@ -363,7 +363,7 @@ let portfolioData = {
       featured: false
     },
      {
-      title: "Joy(1)",
+      title: "Joy",
       description: "Joy Headshot",
       imageUrl: "img/photo/headshot-gallery/joy1.webp",
       category: "headshot",
@@ -372,7 +372,7 @@ let portfolioData = {
       featured: false
     },
     {
-      title: "Laurel(1)",
+      title: "Laurel",
       description: "Laurel Moore Headshot",
       imageUrl: "img/photo/headshot-gallery/Laurel2.webp",
       category: "headshot",
@@ -920,7 +920,7 @@ let portfolioData = {
       category: "graduation",
       subcategory: "photography",
       year: 2024,
-      featured: false
+      featured: true
     },
     {
       title: "kana(2)",
@@ -929,7 +929,7 @@ let portfolioData = {
       category: "graduation",
       subcategory: "photography",
       year: 2024,
-      featured: true
+      featured: false
     },
     {
       title: "kana(3)",

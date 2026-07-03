@@ -256,7 +256,8 @@ function createPortfolioItem(item, isMasonry = false, index = 0) {
   div.innerHTML = `
   <div class="${prefix}-image" style="position:relative;">
     <img src="${item.imageUrl}" alt="${item.title}" loading="lazy" class="portfolio-image">
-    <div class="${prefix}-overlay"></div>
+    <div class="${prefix}-overlay">
+    </div>
     <span class="portfolio-category-label" style="
       position: absolute;
       top: 50%;
@@ -272,7 +273,8 @@ function createPortfolioItem(item, isMasonry = false, index = 0) {
       text-align: center;
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
       white-space: nowrap;
-    ">${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
+    ">
+    ${item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
   </div>
 `;
 
@@ -300,6 +302,7 @@ function createPortfolioItem(item, isMasonry = false, index = 0) {
         const galleryContainer = document.createElement('div');
         const imgEl = document.createElement('img');
         const titleEl = document.createElement('span');
+        const counterEl = document.createElement('span');
 
         imgEl.loading = "lazy";
         imgEl.src = featuredProductions[i].imageUrl;
@@ -316,15 +319,21 @@ function createPortfolioItem(item, isMasonry = false, index = 0) {
         titleEl.style.color = '#fff';
         titleEl.style.margin = '0 0 0.5rem 0';
         titleEl.style.maxWidth = '35vw';
-        imgEl.style.maxHeight = 'auto';
+        titleEl.style.maxHeight = 'auto';
         titleEl.style.textAlign = 'center';
         titleEl.style.display = 'block';
+
+        counterEl.textContent = `${i + 1} / ${featuredProductions.length}`;
+        counterEl.style.color = '#fff';
+        counterEl.style.margin = '0 0 0.5rem 0';
+        counterEl.style.maxWidth = '35vw';
+        counterEl.style.textAlign = 'center';
+        counterEl.style.display = 'block';
         
         imgEl.addEventListener('click', function() {
           openGallery(featuredProductions[i], 1);
-          
         });
-
+        
         galleryOverlay.appendChild(galleryContainer);
         galleryContainer.appendChild(imgEl);
         galleryContainer.appendChild(titleEl);
@@ -429,6 +438,12 @@ function openGallery(item, index) {
   descEl.style.textAlign = 'center';
   descEl.style.maxWidth = '80vw';
 
+  const counterEl = document.createElement('h3');
+  counterEl.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+  counterEl.style.color = '#fff';
+  counterEl.style.margin = '0 0 1rem 0';
+  counterEl.style.textAlign = 'center';
+
   const leftArrow = document.createElement('div');
   leftArrow.textContent = '<';
   leftArrow.style.position = 'absolute';
@@ -473,6 +488,7 @@ function openGallery(item, index) {
     imgEl.src = galleryItems[currentIndex].imageUrl;
     titleEl.textContent = galleryItems[currentIndex].title;
     descEl.textContent = galleryItems[currentIndex].description;
+    counterEl.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
   });
 
   rightArrow.addEventListener('click', function(e) {
@@ -481,6 +497,7 @@ function openGallery(item, index) {
     imgEl.src = galleryItems[currentIndex].imageUrl;
     titleEl.textContent = galleryItems[currentIndex].title;
     descEl.textContent = galleryItems[currentIndex].description;
+    counterEl.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
   });
 
   close.addEventListener('click', function(e) {
@@ -505,10 +522,13 @@ function openGallery(item, index) {
   overlay.appendChild(imgEl);
   overlay.appendChild(rightArrow);
   overlay.appendChild(close);
-  if (item.category != 'headshot' && item.category != 'graduation' && item.category != 'portrait' && item.category != 'event') {
+  if (item.subcategory != "photography" ){
     overlay.appendChild(titleEl);
     overlay.appendChild(descEl);
+  } else if (item.category == "production") {
+    overlay.appendChild(titleEl);
   }
+  overlay.appendChild(counterEl);
   document.body.appendChild(overlay);
 }
 
@@ -539,9 +559,9 @@ function loadActingMaterials() {
 
 // Handle window resize for responsive behavior
 window.addEventListener('resize', function() {
-    if (window.innerWidth >= 768) {
-        closeMobileMenu();
-    }
+  if (window.innerWidth >= 768) {
+    closeMobileMenu();
+  }
 });
 
 // Handle scroll behavior
