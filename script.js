@@ -484,20 +484,24 @@ function openGallery(item, index) {
 
   leftArrow.addEventListener('click', function(e) {
     e.stopPropagation();
+    imgEl.classList.add('fade-out');
     currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
     imgEl.src = galleryItems[currentIndex].imageUrl;
     titleEl.textContent = galleryItems[currentIndex].title;
     descEl.textContent = galleryItems[currentIndex].description;
     counterEl.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+    imgEl.classList.remove('fade-out');
   });
 
   rightArrow.addEventListener('click', function(e) {
     e.stopPropagation();
+    imgEl.classList.add('fade-out');
     currentIndex = (currentIndex + 1) % galleryItems.length;
     imgEl.src = galleryItems[currentIndex].imageUrl;
     titleEl.textContent = galleryItems[currentIndex].title;
     descEl.textContent = galleryItems[currentIndex].description;
     counterEl.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+    imgEl.classList.remove('fade-out');
   });
 
   close.addEventListener('click', function(e) {
