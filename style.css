@@ -807,38 +807,6 @@ Releases
   margin-right: auto;
 }
 
-.subscription-form-container {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.subscription-form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.subscription-form input[type="email"] {
-  padding: var(--spacing-sm) var(--spacing-md);
-  border: 2px solid var(--light-blue);
-  border-radius: 0.5rem;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  background-color: var(--white);
-  color: var(--dark-blue);
-  transition: border-color 0.2s ease;
-  text-align: center;
-}
-
-.subscription-form input[type="email"]:focus {
-  outline: none;
-  border-color: var(--orange);
-}
-
-.subscription-form input[type="email"]::placeholder {
-  color: var(--medium-blue);
-}
-
 /* Contact Form */
 .contact {
   background-color: var(--white);
@@ -859,7 +827,7 @@ Releases
   margin-bottom: var(--spacing-lg);
 }
 
-.contact-form-container {
+.contact-form-container{
   max-width: 600px;
   margin: 0 auto;
 }
@@ -1112,21 +1080,6 @@ Releases
 
   .masonry-loading {
     columns: 2;
-  }
-
-  .subscription-form {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .subscription-form input[type="email"] {
-    flex: 1;
-    text-align: left;
-  }
-
-  .subscription-form .form-button {
-    margin-top: 0;
-    margin-left: var(--spacing-sm);
   }
 }
 

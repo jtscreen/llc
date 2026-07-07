@@ -467,19 +467,20 @@
           </div>
         </div>
       </section>
-
       <section class="subscribe-contact">
         <h3 class="subscribe-title">Be the first to know! Stay tuned for exclusive updates, behind-the-scenes content, and early access to our latest projects as we continue to grow and create. Join our mailing list today!</h3>
-        <div class="subscription-form-container">
-          <form action="https://api.web3forms.com/submit" method="POST" class="subscription-form">
-            <input type="hidden" name="access_key" value="83d56d93-5eb7-4887-8f19-179a1c6a9478">        
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <input type="hidden" name="redirect" value="https://web3forms.com/success">
-            <div class="form-button">
-              <button name="Sign Up" type="submit" class="btn btn-primary">Sign Up</button>
-            </div>
-          </form>
-        </div>
+        
+        <div class="contact-form-container">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+              <input type="hidden" name="access_key" value="83d56d93-5eb7-4887-8f19-179a1c6a9478">        
+              <input type="text" name="name" placeholder="Name" required>
+              <input type="email" name="email" placeholder="Email" required>              
+              <input type="hidden" name="redirect" value="https://web3forms.com/success">
+              <div class="form-button">
+                <button name="Submit" type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
       </section>
     </div>
   </main>
