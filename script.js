@@ -304,7 +304,7 @@ function createPortfolioItem(item, isMasonry = false, index = 0) {
         const titleEl = document.createElement('span');
         const counterEl = document.createElement('span');
 
-        imgEl.loading = "lazy";
+        //imgEl.loading = "lazy";
         imgEl.src = featuredProductions[i].imageUrl;
         imgEl.title = featuredProductions[i].title;
         imgEl.style.maxWidth = '35vw';
